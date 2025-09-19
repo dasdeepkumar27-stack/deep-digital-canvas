@@ -28,20 +28,28 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+    <section id="contact" className="modern-section py-20 bg-gradient-to-br from-background via-muted/10 to-background">
+      {/* Floating Background Elements */}
+      <div className="floating-element top-20 right-10 w-28 h-28 bg-primary/8 rounded-full blur-2xl"></div>
+      <div className="floating-element top-1/2 left-10 w-20 h-20 bg-secondary/8 rounded-full blur-xl"></div>
+      <div className="floating-element bottom-20 right-1/3 w-24 h-24 bg-accent/8 rounded-full blur-xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary rounded-full text-sm font-medium mb-6">
+            Let's Start a Conversation
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
             Let's <span className="gradient-text">Connect</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Ready to collaborate or have questions? I'd love to hear from you
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-8 animate-slide-in-right">
             <div>
               <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -51,8 +59,8 @@ const Contact = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
+              <div className="flex items-center space-x-4 glass-card p-4 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                <div className="bg-gradient-to-br from-primary/20 to-primary/10 p-3 rounded-lg">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -61,8 +69,8 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="bg-secondary/10 p-3 rounded-lg">
+              <div className="flex items-center space-x-4 glass-card p-4 hover:shadow-lg hover:shadow-secondary/10 transition-all duration-300">
+                <div className="bg-gradient-to-br from-secondary/20 to-secondary/10 p-3 rounded-lg">
                   <Phone className="h-6 w-6 text-secondary" />
                 </div>
                 <div>
@@ -71,8 +79,8 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="bg-accent/10 p-3 rounded-lg">
+              <div className="flex items-center space-x-4 glass-card p-4 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300">
+                <div className="bg-gradient-to-br from-accent/20 to-accent/10 p-3 rounded-lg">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -86,10 +94,10 @@ const Contact = () => {
             <div>
               <h4 className="font-semibold mb-4">Connect on Social Media</h4>
               <div className="flex space-x-4">
-                <button className="bg-primary/10 hover:bg-primary/20 p-3 rounded-lg transition-colors">
+                <button className="bg-gradient-to-br from-primary/20 to-primary/10 hover:from-primary/30 hover:to-primary/20 p-3 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-3">
                   <Linkedin className="h-5 w-5 text-primary" />
                 </button>
-                <button className="bg-secondary/10 hover:bg-secondary/20 p-3 rounded-lg transition-colors">
+                <button className="bg-gradient-to-br from-secondary/20 to-secondary/10 hover:from-secondary/30 hover:to-secondary/20 p-3 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-3">
                   <Instagram className="h-5 w-5 text-secondary" />
                 </button>
               </div>
@@ -97,7 +105,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="skill-card">
+          <div className="contact-form animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>

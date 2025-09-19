@@ -4,11 +4,15 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-muted/50 border-t border-border py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="footer-modern py-12 relative overflow-hidden">
+      {/* Floating Background Elements */}
+      <div className="floating-element top-10 left-20 w-16 h-16 bg-primary/5 rounded-full blur-lg"></div>
+      <div className="floating-element top-20 right-10 w-20 h-20 bg-secondary/5 rounded-full blur-xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in">
           {/* Brand */}
-          <div>
+          <div className="glass-card p-6">
             <h3 className="text-xl font-bold gradient-text mb-4">Deep Kumar Das</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Digital Marketing Student & Creative Designer passionate about creating 
@@ -17,7 +21,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="glass-card p-6">
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -56,7 +60,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="glass-card p-6">
             <h4 className="font-semibold mb-4">Get in Touch</h4>
             <div className="space-y-2 text-sm">
               <p className="text-muted-foreground">Kolkata, West Bengal</p>
@@ -66,10 +70,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center">
-          <p className="text-muted-foreground text-sm flex items-center justify-center">
+        <div className="border-t border-border/30 mt-8 pt-8 text-center">
+          <p className="text-muted-foreground text-sm flex items-center justify-center animate-pulse-glow">
             © {currentYear} Deep Kumar Das. Made with{' '}
-            <Heart className="h-4 w-4 mx-1 text-red-500" />{' '}
+            <Heart className="h-4 w-4 mx-1 text-red-500 animate-pulse" />{' '}
             for digital excellence
           </p>
         </div>

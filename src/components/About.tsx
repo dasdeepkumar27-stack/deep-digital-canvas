@@ -2,21 +2,30 @@ import { GraduationCap, MapPin, TrendingUp } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+    <section id="about" className="modern-section py-20 bg-gradient-to-br from-muted/30 via-background to-muted/20">
+      {/* Floating Background Elements */}
+      <div className="floating-element top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
+      <div className="floating-element top-40 right-20 w-32 h-32 bg-secondary/10 rounded-full blur-2xl"></div>
+      <div className="floating-element bottom-20 left-1/4 w-16 h-16 bg-accent/10 rounded-full blur-lg"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+            Getting to Know Me
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
             About <span className="gradient-text">Me</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Passionate about digital marketing and design, constantly learning and growing in the field
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Story */}
-          <div className="space-y-6">
-            <div className="prose prose-lg max-w-none">
+          <div className="space-y-6 animate-slide-in-right">
+            <div className="glass-card p-8">
+              <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed">
                 My journey into digital marketing began with a curiosity about how brands connect with their audiences online. As a dedicated student at NIHT Bhawanipur, Kolkata, I've immersed myself in learning the intricacies of SEO, content optimization, and visual design.
               </p>
@@ -26,12 +35,13 @@ const About = () => {
               <p className="text-muted-foreground leading-relaxed">
                 Every project is an opportunity to learn something new, and I approach each challenge with enthusiasm and a growth mindset. I'm excited to apply my skills in real-world scenarios and contribute to innovative digital marketing campaigns.
               </p>
+              </div>
             </div>
           </div>
 
           {/* Education & Details */}
-          <div className="space-y-6">
-            <div className="skill-card">
+          <div className="space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="glass-card p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
                   <GraduationCap className="h-6 w-6 text-primary" />
@@ -52,9 +62,9 @@ const About = () => {
               </div>
             </div>
 
-            <div className="skill-card">
+            <div className="glass-card p-6 hover:shadow-xl hover:shadow-secondary/10 transition-all duration-300">
               <div className="flex items-start space-x-4">
-                <div className="bg-secondary/10 p-3 rounded-lg">
+                <div className="bg-gradient-to-br from-secondary/20 to-secondary/10 p-3 rounded-lg">
                   <MapPin className="h-6 w-6 text-secondary" />
                 </div>
                 <div>
@@ -65,9 +75,9 @@ const About = () => {
               </div>
             </div>
 
-            <div className="skill-card">
+            <div className="glass-card p-6 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300">
               <div className="flex items-start space-x-4">
-                <div className="bg-accent/10 p-3 rounded-lg">
+                <div className="bg-gradient-to-br from-accent/20 to-accent/10 p-3 rounded-lg">
                   <TrendingUp className="h-6 w-6 text-primary" />
                 </div>
                 <div>

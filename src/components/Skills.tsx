@@ -69,13 +69,21 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+    <section id="skills" className="modern-section py-20 bg-gradient-to-br from-background via-muted/10 to-background">
+      {/* Floating Background Elements */}
+      <div className="floating-element top-10 right-10 w-24 h-24 bg-primary/10 rounded-full blur-xl"></div>
+      <div className="floating-element top-1/3 left-20 w-16 h-16 bg-secondary/10 rounded-full blur-lg"></div>
+      <div className="floating-element bottom-1/4 right-1/3 w-20 h-20 bg-accent/10 rounded-full blur-xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary rounded-full text-sm font-medium mb-6">
+            What I Bring to the Table
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
             My <span className="gradient-text">Skills</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             A comprehensive toolkit for modern digital marketing and creative design
           </p>
         </div>
@@ -86,11 +94,11 @@ const Skills = () => {
             return (
               <div 
                 key={skill.title}
-                className="skill-card group"
+                className="glass-card p-6 group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:scale-[1.02] animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start space-x-4">
-                  <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary/20 transition-colors">
+                  <div className="bg-gradient-to-br from-primary/20 to-primary/10 p-3 rounded-lg group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 group-hover:scale-110">
                     <IconComponent className={`h-6 w-6 ${skill.color.startsWith('text-gradient') ? 'text-primary' : skill.color}`} />
                   </div>
                   <div className="flex-1">
@@ -108,8 +116,10 @@ const Skills = () => {
         </div>
 
         {/* Featured Skill */}
-        <div className="mt-12">
-          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 text-center">
+        <div className="mt-12 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+          <div className="glass-card p-8 text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5"></div>
+            <div className="relative z-10">
             <h3 className="text-2xl font-bold mb-4">
               Specialized in <span className="gradient-text">Figma Design</span>
             </h3>
@@ -118,6 +128,7 @@ const Skills = () => {
               stunning, user-centered designs. My portfolio includes everything from mobile app interfaces 
               to comprehensive brand identity systems.
             </p>
+            </div>
           </div>
         </div>
       </div>
