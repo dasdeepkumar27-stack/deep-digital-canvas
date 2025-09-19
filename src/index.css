@@ -8,6 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Professional Portfolio Color System */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -17,26 +18,46 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Professional Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 91% 75%;
+    --primary-dark: 217 91% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Modern Purple */
+    --secondary: 252 83% 57%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Neutral Palette */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 9% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.5rem;
+    /* Design System Tokens */
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%), hsl(252 83% 57%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(220 14% 98%));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 8px 25px -5px hsl(var(--primary) / 0.15);
+    --shadow-large: 0 20px 40px -12px hsl(var(--primary) / 0.25);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -65,11 +86,13 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 217 91% 75%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --primary-light: 217 91% 85%;
+    --primary-dark: 217 91% 55%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 252 83% 67%;
+    --secondary-foreground: 222.2 84% 4.9%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -82,7 +105,11 @@ All colors MUST be HSL.
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 217 91% 75%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 75%), hsl(252 83% 67%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(217.2 32.6% 15%));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +127,60 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
+  }
+}
+
+/* Poppins Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Custom Component Styles */
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .card-hover {
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .skill-card {
+    @apply bg-card border border-border/50 rounded-xl p-6 card-hover;
+    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--muted)));
+  }
+  
+  .btn-hero {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold;
+    background: var(--gradient-primary);
+    transition: var(--transition-bounce);
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-large);
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold;
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-outline:hover {
+    @apply bg-primary text-primary-foreground;
+    transform: translateY(-2px);
   }
 }
