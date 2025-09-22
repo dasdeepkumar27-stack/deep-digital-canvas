@@ -1,5 +1,5 @@
 import { ArrowRight, Download } from 'lucide-react';
-import deepProfile from '@/assets/deep-profile.jpg';
+import deepProfile from '@/assets/deep-profile-new.png';
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -71,7 +71,7 @@ const Hero = () => {
                 <img
                   src={deepProfile}
                   alt="Deep Kumar Das"
-                  className="w-full max-w-md mx-auto rounded-2xl shadow-lg"
+                  className="w-full max-w-md mx-auto aspect-square object-cover rounded-2xl shadow-lg"
                 />
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm animate-float">
                   NIHT<br />Student
