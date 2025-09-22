@@ -3,12 +3,13 @@ import { ExternalLink, Figma, Code, Smartphone, Instagram, Globe } from 'lucide-
 const Portfolio = () => {
   const projects = [
     {
-      title: 'Flipkart Application Design',
-      description: 'Mobile app UI/UX design concept with modern interface elements and user-friendly navigation.',
+      title: 'GRAVIX - UI/UX Design Prototype',
+      description: 'Interactive mobile app prototype showcasing modern design principles and user experience flow.',
       category: 'UI/UX Design',
       icon: Smartphone,
       featured: true,
-      tech: ['Figma', 'Mobile Design', 'UI/UX']
+      tech: ['Figma', 'Prototype', 'Mobile Design', 'UI/UX'],
+      link: 'https://www.figma.com/proto/hVz2J6WNxy2qwlIFEjr7cd/GRAVIX?node-id=83-7&p=f&t=pzAyywCPsXnaJjma-0&scaling=scale-down&content-scaling=fixed&page-id=81%3A2'
     },
     {
       title: 'WordPress Business Site',
@@ -126,11 +127,23 @@ const Portfolio = () => {
                 </div>
 
                 <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <span className="text-sm text-muted-foreground">Practice Project</span>
-                  <button className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors">
-                    View Details
-                    <ExternalLink className="ml-1 h-3 w-3" />
-                  </button>
+                  <span className="text-sm text-muted-foreground">{project.link ? 'Live Project' : 'Practice Project'}</span>
+                  {project.link ? (
+                    <a 
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors"
+                    >
+                      View Prototype
+                      <ExternalLink className="ml-1 h-3 w-3" />
+                    </a>
+                  ) : (
+                    <button className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors">
+                      View Details
+                      <ExternalLink className="ml-1 h-3 w-3" />
+                    </button>
+                  )}
                 </div>
               </div>
             );
