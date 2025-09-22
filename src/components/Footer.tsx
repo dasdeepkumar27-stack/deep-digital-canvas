@@ -64,7 +64,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Get in Touch</h4>
             <div className="space-y-2 text-sm">
               <p className="text-muted-foreground">Kolkata, West Bengal</p>
-              <p className="text-muted-foreground">deep.kumar@email.com</p>
+              <p className="text-muted-foreground">dasdeepkumar27@gmail.com</p>
               <p className="text-muted-foreground">Available for opportunities</p>
             </div>
           </div>
