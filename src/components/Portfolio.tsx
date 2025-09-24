@@ -12,6 +12,14 @@ const Portfolio = () => {
       link: 'https://www.figma.com/proto/hVz2J6WNxy2qwlIFEjr7cd/GRAVIX?node-id=83-7&p=f&t=pzAyywCPsXnaJjma-0&scaling=scale-down&content-scaling=fixed&page-id=81%3A2'
     },
     {
+      title: 'Consciously Crafted Creations',
+      description: 'Modern responsive website showcasing creative crafting services with elegant design and user experience.',
+      category: 'Web Development',
+      icon: Globe,
+      tech: ['React', 'Tailwind CSS', 'Responsive Design', 'Modern UI'],
+      link: 'https://consciously-crafted-creations.lovable.app/'
+    },
+    {
       title: 'WordPress Business Site',
       description: 'Responsive business website built with WordPress, optimized for SEO and conversions.',
       category: 'Web Development',
