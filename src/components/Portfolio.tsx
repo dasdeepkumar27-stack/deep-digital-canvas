@@ -52,7 +52,8 @@ const Portfolio = () => {
       description: 'Creative portfolio website mockup showcasing modern design trends and user experience.',
       category: 'Web Design',
       icon: Figma,
-      tech: ['Portfolio Design', 'Figma', 'Web Design']
+      tech: ['Portfolio Design', 'Figma', 'Web Design'],
+      link: 'https://www.figma.com/design/hVz2J6WNxy2qwlIFEjr7cd/GRAVIX?node-id=5-29&p=f&t=BnvmPuESvi4h1Cf6-0'
     }
   ];
 
