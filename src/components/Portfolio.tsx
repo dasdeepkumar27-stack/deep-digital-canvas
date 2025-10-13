@@ -24,7 +24,8 @@ const Portfolio = () => {
       description: 'Responsive business website built with WordPress, optimized for SEO and conversions.',
       category: 'Web Development',
       icon: Code,
-      tech: ['WordPress', 'SEO', 'Responsive Design']
+      tech: ['WordPress', 'SEO', 'Responsive Design'],
+      link: 'https://dasdeepkumar.nihtstudents.com'
     },
     {
       title: 'Brand Identity System',
