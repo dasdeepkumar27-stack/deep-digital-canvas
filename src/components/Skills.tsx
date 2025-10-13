@@ -7,7 +7,8 @@ import {
   Camera, 
   Figma, 
   Instagram,
-  Smartphone
+  Smartphone,
+  Layout
 } from 'lucide-react';
 
 const Skills = () => {
@@ -17,6 +18,13 @@ const Skills = () => {
       title: 'WordPress Development',
       description: 'Creating responsive and user-friendly websites',
       color: 'text-blue-600'
+    },
+    {
+      icon: Layout,
+      title: 'Portfolio Website Design',
+      description: 'Custom portfolio designs crafted in Figma',
+      color: 'text-cyan-600',
+      link: 'https://www.figma.com/design/hVz2J6WNxy2qwlIFEjr7cd/GRAVIX?node-id=5-29&p=f&t=BnvmPuESvi4h1Cf6-0'
     },
     {
       icon: Search,
@@ -91,12 +99,8 @@ const Skills = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => {
             const IconComponent = skill.icon;
-            return (
-              <div 
-                key={skill.title}
-                className="glass-card p-6 group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:scale-[1.02] animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+            const CardContent = (
+              <>
                 <div className="flex items-start space-x-4">
                   <div className="bg-gradient-to-br from-primary/20 to-primary/10 p-3 rounded-lg group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 group-hover:scale-110">
                     <IconComponent className={`h-6 w-6 ${skill.color.startsWith('text-gradient') ? 'text-primary' : skill.color}`} />
@@ -110,6 +114,27 @@ const Skills = () => {
                     </p>
                   </div>
                 </div>
+              </>
+            );
+
+            return skill.link ? (
+              <a
+                key={skill.title}
+                href={skill.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card p-6 group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:scale-[1.02] animate-fade-in cursor-pointer"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {CardContent}
+              </a>
+            ) : (
+              <div 
+                key={skill.title}
+                className="glass-card p-6 group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:scale-[1.02] animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {CardContent}
               </div>
             );
           })}
