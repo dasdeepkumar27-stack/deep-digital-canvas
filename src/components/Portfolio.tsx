@@ -47,7 +47,8 @@ const Portfolio = () => {
       description: 'High-converting landing page design with optimized user flow and SEO implementation.',
       category: 'Web Design',
       icon: Globe,
-      tech: ['Landing Page', 'SEO', 'Conversion Optimization']
+      tech: ['Landing Page', 'SEO', 'Conversion Optimization'],
+      link: 'https://www.figma.com/proto/N2yMwwN9toGCuLgcABjR8Z/flipkart?t=s8U8E9jxQg1MKrta-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=5-53&starting-point-node-id=5%3A53'
     },
     {
       title: 'Portfolio Website Design',
