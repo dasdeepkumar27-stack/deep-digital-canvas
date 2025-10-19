@@ -32,7 +32,8 @@ const Portfolio = () => {
       description: 'Complete brand manual including logo design, color palette, and typography guidelines.',
       category: 'Brand Design',
       icon: Figma,
-      tech: ['Brand Design', 'Figma', 'Adobe Photoshop']
+      tech: ['Brand Design', 'Figma', 'Adobe Photoshop'],
+      link: 'https://docs.google.com/spreadsheets/d/1OeKH_lCxTURVHo6yVJAA6aeCkVABiX7pze4XSckBPaM/edit?gid=0#gid=0'
     },
     {
       title: 'Social Media Campaign',
