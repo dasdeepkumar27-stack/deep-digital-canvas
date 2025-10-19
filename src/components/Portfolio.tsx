@@ -39,7 +39,8 @@ const Portfolio = () => {
       description: 'Instagram page design and content calendar for a local business, increasing engagement by 40%.',
       category: 'Social Media',
       icon: Instagram,
-      tech: ['Social Media', 'Content Strategy', 'Photoshop']
+      tech: ['Social Media', 'Content Strategy', 'Photoshop'],
+      link: 'https://www.figma.com/design/8bSs72bn9kikPI6tTcvPiy/Untitled?node-id=0-1&p=f&t=s8U8E9jxQg1MKrta-0'
     },
     {
       title: 'E-commerce Landing Page',
