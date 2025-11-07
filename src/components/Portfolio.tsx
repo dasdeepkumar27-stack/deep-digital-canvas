@@ -1,4 +1,4 @@
-import { ExternalLink, Figma, Code, Smartphone, Instagram, Globe } from 'lucide-react';
+import { ExternalLink, Figma, Code, Smartphone, Instagram, Globe, Video } from 'lucide-react';
 
 const Portfolio = () => {
   const projects = [
@@ -58,10 +58,19 @@ const Portfolio = () => {
       icon: Figma,
       tech: ['Portfolio Design', 'Figma', 'Web Design'],
       link: 'https://www.figma.com/design/hVz2J6WNxy2qwlIFEjr7cd/GRAVIX?node-id=5-29&p=f&t=BnvmPuESvi4h1Cf6-0'
+    },
+    {
+      title: 'UGC Ad Campaign',
+      description: 'User-generated content advertisement showcasing authentic product storytelling and engagement.',
+      category: 'Video Marketing',
+      icon: Video,
+      tech: ['Video Production', 'UGC', 'Content Marketing'],
+      link: '/videos/ugc-ad.mp4',
+      isVideo: true
     }
   ];
 
-  const categories = ['All', 'UI/UX Design', 'Web Development', 'Brand Design', 'Social Media', 'Web Design'];
+  const categories = ['All', 'UI/UX Design', 'Web Development', 'Brand Design', 'Social Media', 'Web Design', 'Video Marketing'];
 
   return (
     <section id="portfolio" className="modern-section py-20 bg-gradient-to-br from-muted/30 via-background to-muted/20">
@@ -144,11 +153,11 @@ const Portfolio = () => {
                   {project.link ? (
                     <a 
                       href={project.link}
-                      target="_blank"
+                      target={project.isVideo ? '_self' : '_blank'}
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors"
                     >
-                      View Prototype
+                      {project.isVideo ? 'Watch Video' : 'View Prototype'}
                       <ExternalLink className="ml-1 h-3 w-3" />
                     </a>
                   ) : (
