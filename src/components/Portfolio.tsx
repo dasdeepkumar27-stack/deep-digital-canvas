@@ -1,4 +1,4 @@
-import { ExternalLink, Figma, Code, Smartphone, Instagram, Globe, Video } from 'lucide-react';
+import { ExternalLink, Figma, Code, Smartphone, Instagram, Globe, Video, Facebook } from 'lucide-react';
 
 const Portfolio = () => {
   const projects = [
@@ -67,10 +67,18 @@ const Portfolio = () => {
       tech: ['Video Production', 'UGC', 'Content Marketing'],
       link: '/videos/ugc-ad.mp4',
       isVideo: true
+    },
+    {
+      title: 'Facebook Ads Campaign',
+      description: 'Managed Facebook advertising campaign with optimized targeting, ad creatives, and performance tracking.',
+      category: 'Digital Marketing',
+      icon: Facebook,
+      tech: ['Facebook Ads', 'Targeting', 'Campaign Management', 'Analytics'],
+      link: 'https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=980524780834920&business_id=1942326379950171&selected_campaign_ids=23851194704510794&selected_adset_ids=23851194704530794&selected_ad_ids=23851194704520794'
     }
   ];
 
-  const categories = ['All', 'UI/UX Design', 'Web Development', 'Brand Design', 'Social Media', 'Web Design', 'Video Marketing'];
+  const categories = ['All', 'UI/UX Design', 'Web Development', 'Brand Design', 'Social Media', 'Web Design', 'Video Marketing', 'Digital Marketing'];
 
   return (
     <section id="portfolio" className="modern-section py-20 bg-gradient-to-br from-muted/30 via-background to-muted/20">
