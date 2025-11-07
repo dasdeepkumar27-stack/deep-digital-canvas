@@ -75,10 +75,19 @@ const Portfolio = () => {
       icon: Facebook,
       tech: ['Facebook Ads', 'Targeting', 'Campaign Management', 'Analytics'],
       link: 'https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=980524780834920&business_id=1942326379950171&selected_campaign_ids=23851194704510794&selected_adset_ids=23851194704530794&selected_ad_ids=23851194704520794'
+    },
+    {
+      title: 'Adobe Premiere Pro Title Sequence',
+      description: 'Professional title sequence created in Adobe Premiere Pro during video editing coursework, showcasing motion graphics and timing.',
+      category: 'Video Editing',
+      icon: Video,
+      tech: ['Adobe Premiere Pro', 'Motion Graphics', 'Video Editing', 'Title Design'],
+      link: '/videos/premiere-pro-title.mp4',
+      isVideo: true
     }
   ];
 
-  const categories = ['All', 'UI/UX Design', 'Web Development', 'Brand Design', 'Social Media', 'Web Design', 'Video Marketing', 'Digital Marketing'];
+  const categories = ['All', 'UI/UX Design', 'Web Development', 'Brand Design', 'Social Media', 'Web Design', 'Video Marketing', 'Digital Marketing', 'Video Editing'];
 
   return (
     <section id="portfolio" className="modern-section py-20 bg-gradient-to-br from-muted/30 via-background to-muted/20">
