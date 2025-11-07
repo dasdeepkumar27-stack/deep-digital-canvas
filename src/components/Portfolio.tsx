@@ -84,6 +84,15 @@ const Portfolio = () => {
       tech: ['Adobe Premiere Pro', 'Motion Graphics', 'Video Editing', 'Title Design'],
       link: '/videos/premiere-pro-title.mp4',
       isVideo: true
+    },
+    {
+      title: 'Adobe Premiere Pro - Run Sequence',
+      description: 'Dynamic action sequence edited in Adobe Premiere Pro, demonstrating pacing, cuts, and visual storytelling techniques.',
+      category: 'Video Editing',
+      icon: Video,
+      tech: ['Adobe Premiere Pro', 'Video Editing', 'Action Sequences', 'Pacing'],
+      link: '/videos/premiere-pro-run.mp4',
+      isVideo: true
     }
   ];
 
