@@ -93,6 +93,15 @@ const Portfolio = () => {
       tech: ['Adobe Premiere Pro', 'Video Editing', 'Action Sequences', 'Pacing'],
       link: '/videos/premiere-pro-run.mp4',
       isVideo: true
+    },
+    {
+      title: 'AI-Generated Video Content',
+      description: 'Creative video content generated using Google Gemini AI, showcasing emerging AI video generation capabilities.',
+      category: 'Video Marketing',
+      icon: Video,
+      tech: ['AI Video Generation', 'Google Gemini', 'Video Editing', 'Content Creation'],
+      link: '/videos/gemini-generated-video.mp4',
+      isVideo: true
     }
   ];
 
