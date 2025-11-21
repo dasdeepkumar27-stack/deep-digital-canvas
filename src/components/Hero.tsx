@@ -1,7 +1,15 @@
 import { ArrowRight, Download } from 'lucide-react';
 import deepProfile from '@/assets/deep-profile-new.png';
+import { useState } from 'react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 const Hero = () => {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -56,15 +64,13 @@ const Hero = () => {
             </div>
             
             <div className="mt-8 pt-8 border-t border-border">
-              <a 
-                href="/DEEP_KUMAR_DAS_RESUME.pdf" 
-                target="_blank"
-                rel="noopener noreferrer"
+              <button 
+                onClick={() => setIsResumeOpen(true)}
                 className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Download className="mr-2 h-4 w-4" />
                 View Resume
-              </a>
+              </button>
             </div>
           </div>
           
@@ -86,6 +92,22 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Resume Viewer Dialog */}
+      <Dialog open={isResumeOpen} onOpenChange={setIsResumeOpen}>
+        <DialogContent className="max-w-5xl h-[90vh] flex flex-col p-0">
+          <DialogHeader className="px-6 pt-6 pb-4">
+            <DialogTitle>Resume - Deep Kumar Das</DialogTitle>
+          </DialogHeader>
+          <div className="flex-1 px-6 pb-6">
+            <iframe
+              src="/DEEP_KUMAR_DAS_RESUME.pdf"
+              className="w-full h-full border-0 rounded-lg"
+              title="Resume PDF Viewer"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
