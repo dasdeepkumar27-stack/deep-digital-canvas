@@ -58,11 +58,12 @@ const Hero = () => {
             <div className="mt-8 pt-8 border-t border-border">
               <a 
                 href="/DEEP_KUMAR_DAS_RESUME.pdf" 
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Download className="mr-2 h-4 w-4" />
-                Download Resume
+                View Resume
               </a>
             </div>
           </div>
