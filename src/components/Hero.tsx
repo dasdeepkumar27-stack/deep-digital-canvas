@@ -31,7 +31,7 @@ const Hero = () => {
                 <span className="gradient-text">Deep Kumar Das</span>
               </h1>
               <h2 className="text-xl sm:text-2xl text-muted-foreground mt-4 font-medium">
-                Digital Marketer & Creative Designer
+                Digital Marketer & Creative Design Specialist
               </h2>
             </div>
             
