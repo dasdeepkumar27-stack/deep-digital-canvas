@@ -102,6 +102,15 @@ const Portfolio = () => {
       tech: ['AI Video Generation', 'Google Gemini', 'Video Editing', 'Content Creation'],
       link: '/videos/gemini-generated-video.mp4',
       isVideo: true
+    },
+    {
+      title: 'AI Video Creation - Gemini',
+      description: 'Innovative video content produced with Google Gemini AI, demonstrating advanced AI-powered video generation technology.',
+      category: 'Video Marketing',
+      icon: Video,
+      tech: ['Google Gemini', 'AI Content Creation', 'Video Marketing', 'Digital Innovation'],
+      link: '/videos/gemini-video-2.mp4',
+      isVideo: true
     }
   ];
 
