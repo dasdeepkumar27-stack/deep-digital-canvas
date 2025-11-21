@@ -56,10 +56,14 @@ const Hero = () => {
             </div>
             
             <div className="mt-8 pt-8 border-t border-border">
-              <button className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a 
+                href="/DEEP_KUMAR_DAS_RESUME.pdf" 
+                download
+                className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
-              </button>
+              </a>
             </div>
           </div>
           
