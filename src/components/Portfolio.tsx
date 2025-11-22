@@ -95,6 +95,15 @@ const Portfolio = () => {
       isVideo: true
     },
     {
+      title: 'Orange Juice Motion Graphics',
+      description: 'Dynamic motion graphic animation created in Adobe After Effects, featuring vibrant visuals and smooth transitions.',
+      category: 'Video Editing',
+      icon: Video,
+      tech: ['Adobe After Effects', 'Motion Graphics', 'Animation', 'Visual Effects'],
+      link: '/videos/orange-juice.mp4',
+      isVideo: true
+    },
+    {
       title: 'AI-Generated Video Content',
       description: 'Creative video content generated using Google Gemini AI, showcasing emerging AI video generation capabilities.',
       category: 'Video Marketing',
