@@ -1,4 +1,4 @@
-import { GraduationCap, MapPin, TrendingUp } from 'lucide-react';
+import { Briefcase, GraduationCap, MapPin, TrendingUp } from 'lucide-react';
 
 const About = () => {
   return (
@@ -39,8 +39,21 @@ const About = () => {
             </div>
           </div>
 
-          {/* Education & Details */}
+          {/* Professional Details */}
           <div className="space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="glass-card p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+              <div className="flex items-start space-x-4">
+                <div className="bg-primary/10 p-3 rounded-lg">
+                  <Briefcase className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Professional Skills</h3>
+                  <p className="font-medium">Digital Marketing Intern</p>
+                  <p className="text-sm text-muted-foreground">NIHT Bhawanipur, Kolkata</p>
+                </div>
+              </div>
+            </div>
+
             <div className="glass-card p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
