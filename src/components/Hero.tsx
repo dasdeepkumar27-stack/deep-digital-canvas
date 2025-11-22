@@ -56,13 +56,14 @@ const Hero = () => {
             </div>
             
             <div className="mt-8 pt-8 border-t border-border">
-              <button 
-                onClick={() => scrollToSection('#resume')}
+              <a 
+                href="/DEEP_KUMAR_DAS_RESUME.pdf"
+                download
                 className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <FileText className="mr-2 h-4 w-4" />
-                View Resume
-              </button>
+                Download Resume
+              </a>
             </div>
           </div>
           
