@@ -50,12 +50,12 @@ const About = () => {
                   <h3 className="text-lg font-semibold mb-2">Education</h3>
                   <div className="space-y-2">
                     <div>
-                      <p className="font-medium">Digital Marketing Course</p>
-                      <p className="text-sm text-muted-foreground">NIHT Bhawanipur, Kolkata (Currently Pursuing)</p>
+                      <p className="font-medium">ITI – Fitter Trade 2021-2023</p>
+                      <p className="text-sm text-muted-foreground">Howrah Homes Industrial Training Institute</p>
                     </div>
                     <div>
-                      <p className="font-medium">12th Grade - 82%</p>
-                      <p className="text-sm text-muted-foreground">Bantra MSPC High School</p>
+                      <p className="font-medium">Higher Secondary Education 2021</p>
+                      <p className="text-sm text-muted-foreground">Bantra M.S.P.C. High School</p>
                     </div>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Location</h3>
-                  <p className="text-muted-foreground">Kolkata, West Bengal, India</p>
+                  <p className="text-muted-foreground">Howrah, West Bengal 711101</p>
                   <p className="text-sm text-muted-foreground mt-1">Open to remote opportunities</p>
                 </div>
               </div>
