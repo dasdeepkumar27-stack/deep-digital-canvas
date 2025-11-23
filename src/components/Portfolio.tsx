@@ -95,15 +95,6 @@ const Portfolio = () => {
       isVideo: true
     },
     {
-      title: 'Orange Juice Motion Graphics',
-      description: 'Dynamic motion graphic animation created in Adobe After Effects, featuring vibrant visuals and smooth transitions.',
-      category: 'Video Editing',
-      icon: Video,
-      tech: ['Adobe After Effects', 'Motion Graphics', 'Animation', 'Visual Effects'],
-      link: '/videos/orange-juice.mp4',
-      isVideo: true
-    },
-    {
       title: 'Hand Cream Advertisement',
       description: 'Professional motion graphics advertisement created in Adobe After Effects, showcasing product branding and visual storytelling.',
       category: 'Video Editing',
