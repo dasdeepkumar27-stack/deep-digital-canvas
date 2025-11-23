@@ -104,6 +104,15 @@ const Portfolio = () => {
       isVideo: true
     },
     {
+      title: 'Hand Cream Advertisement',
+      description: 'Professional motion graphics advertisement created in Adobe After Effects, showcasing product branding and visual storytelling.',
+      category: 'Video Editing',
+      icon: Video,
+      tech: ['Adobe After Effects', 'Motion Graphics', 'Commercial Ad', 'Visual Effects'],
+      link: '/videos/handcream-ad.mp4',
+      isVideo: true
+    },
+    {
       title: 'AI-Generated Video Content',
       description: 'Creative video content generated using Google Gemini AI, showcasing emerging AI video generation capabilities.',
       category: 'Video Marketing',
