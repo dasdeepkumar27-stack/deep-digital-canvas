@@ -86,15 +86,6 @@ const Portfolio = () => {
       isVideo: true
     },
     {
-      title: 'Adobe Premiere Pro - Run Sequence',
-      description: 'Dynamic action sequence edited in Adobe Premiere Pro, demonstrating pacing, cuts, and visual storytelling techniques.',
-      category: 'Video Editing',
-      icon: Video,
-      tech: ['Adobe Premiere Pro', 'Video Editing', 'Action Sequences', 'Pacing'],
-      link: '/videos/premiere-pro-run.mp4',
-      isVideo: true
-    },
-    {
       title: 'Hand Cream Advertisement',
       description: 'Professional motion graphics advertisement created in Adobe After Effects, showcasing product branding and visual storytelling.',
       category: 'Video Editing',
