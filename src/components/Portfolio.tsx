@@ -77,12 +77,12 @@ const Portfolio = () => {
       link: 'https://adsmanager.facebook.com/adsmanager/manage/ads/edit/standalone?act=980524780834920&business_id=1942326379950171&selected_campaign_ids=23851194704510794&selected_adset_ids=23851194704530794&selected_ad_ids=23851194704520794'
     },
     {
-      title: 'Adobe Premiere Pro Title Sequence',
-      description: 'Professional title sequence created in Adobe Premiere Pro during video editing coursework, showcasing motion graphics and timing.',
+      title: 'Adobe Premiere Pro - Creative Edit',
+      description: 'Creative video project edited in Adobe Premiere Pro, demonstrating professional editing techniques and visual storytelling.',
       category: 'Video Editing',
       icon: Video,
-      tech: ['Adobe Premiere Pro', 'Motion Graphics', 'Video Editing', 'Title Design'],
-      link: '/videos/premiere-pro-title.mp4',
+      tech: ['Adobe Premiere Pro', 'Video Editing', 'Creative Editing', 'Post-Production'],
+      link: '/videos/premiere-pro-new.mp4',
       isVideo: true
     },
     {
