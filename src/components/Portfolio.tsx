@@ -86,6 +86,15 @@ const Portfolio = () => {
       isVideo: true
     },
     {
+      title: 'Adobe After Effects - Text Animation',
+      description: 'Creative text animation crafted in Adobe After Effects, showcasing typography motion design and visual effects.',
+      category: 'Video Editing',
+      icon: Video,
+      tech: ['Adobe After Effects', 'Text Animation', 'Motion Graphics', 'Typography'],
+      link: '/videos/after-effects-text-animation.mp4',
+      isVideo: true
+    },
+    {
       title: 'Hand Cream Advertisement',
       description: 'Professional motion graphics advertisement created in Adobe After Effects, showcasing product branding and visual storytelling.',
       category: 'Video Editing',
