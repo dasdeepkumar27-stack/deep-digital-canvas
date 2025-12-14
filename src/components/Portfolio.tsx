@@ -95,6 +95,15 @@ const Portfolio = () => {
       isVideo: true
     },
     {
+      title: 'Indian Style Wedding Card Animation',
+      description: 'Beautiful Indian wedding invitation card animation created in Adobe After Effects, featuring traditional designs and elegant motion graphics.',
+      category: 'Video Editing',
+      icon: Video,
+      tech: ['Adobe After Effects', 'Wedding Design', 'Motion Graphics', 'Traditional Art'],
+      link: '/videos/wedding-card-animation.mp4',
+      isVideo: true
+    },
+    {
       title: 'Hand Cream Advertisement',
       description: 'Professional motion graphics advertisement created in Adobe After Effects, showcasing product branding and visual storytelling.',
       category: 'Video Editing',
