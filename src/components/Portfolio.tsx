@@ -86,6 +86,15 @@ const Portfolio = () => {
       isVideo: true
     },
     {
+      title: 'Adobe Premiere Pro - Creative Edit 2',
+      description: 'Creative video edit produced in Adobe Premiere Pro, demonstrating professional editing skills and artistic visual composition.',
+      category: 'Video Editing',
+      icon: Video,
+      tech: ['Adobe Premiere Pro', 'Video Editing', 'Creative Production', 'Visual Effects'],
+      link: '/videos/premiere-pro-creative-edit-2.mp4',
+      isVideo: true
+    },
+    {
       title: 'Adobe After Effects - Text Animation',
       description: 'Creative text animation crafted in Adobe After Effects, showcasing typography motion design and visual effects.',
       category: 'Video Editing',
