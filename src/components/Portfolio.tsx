@@ -78,11 +78,11 @@ const Portfolio = () => {
     },
     {
       title: 'Adobe Premiere Pro - Creative Edit',
-      description: 'Creative video project edited in Adobe Premiere Pro, demonstrating professional editing techniques and visual storytelling.',
+      description: 'Hoodie brand advertisement edited in Adobe Premiere Pro, showcasing creative editing techniques and visual storytelling for fashion marketing.',
       category: 'Video Editing',
       icon: Video,
-      tech: ['Adobe Premiere Pro', 'Video Editing', 'Creative Editing', 'Post-Production'],
-      link: '/videos/premiere-pro-new.mp4',
+      tech: ['Adobe Premiere Pro', 'Video Editing', 'Brand Advertisement', 'Fashion Marketing'],
+      link: '/videos/premiere-pro-creative-edit.mp4',
       isVideo: true
     },
     {
