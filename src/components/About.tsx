@@ -17,7 +17,7 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Passionate about digital marketing and design, constantly learning and growing in the field
+            As a Digital Marketer in Kolkata, I'm passionate about digital marketing and design, constantly learning and growing in the field
           </p>
         </div>
 
@@ -27,7 +27,7 @@ const About = () => {
             <div className="glass-card p-8">
               <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed">
-                My journey into digital marketing began with a curiosity about how brands connect with their audiences online. As a dedicated student at NIHT Bhawanipur, Kolkata, I've immersed myself in learning the intricacies of SEO, content optimization, and visual design.
+                My journey as a Digital Marketer in Kolkata began with a curiosity about how brands connect with their audiences online. As a dedicated student at NIHT Bhawanipur, Kolkata, I've immersed myself in learning the intricacies of SEO, content optimization, and visual design.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 I believe that great digital marketing combines analytical thinking with creative expression. Through my studies and hands-on practice, I've developed skills in graphics design, WordPress development, and UI/UX design using Figma. My goal is to create compelling digital experiences that not only look great but also drive meaningful results.

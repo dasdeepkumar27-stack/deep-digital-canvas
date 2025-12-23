@@ -15,8 +15,8 @@ const Footer = () => {
           <div className="glass-card p-6">
             <h3 className="text-xl font-bold gradient-text mb-4">Deep Kumar Das</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Digital Marketer passionate about creating 
-              compelling digital experiences.
+              Digital Marketer in Kolkata passionate about creating 
+              compelling digital experiences and helping brands grow online.
             </p>
           </div>
 

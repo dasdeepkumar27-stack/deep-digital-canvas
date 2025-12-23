@@ -52,8 +52,8 @@ const Contact = () => {
           <div className="space-y-8 animate-slide-in-right">
             <div>
               <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Whether you have a project in mind, need help with digital marketing, 
+            <p className="text-muted-foreground leading-relaxed mb-6">
+                Whether you have a project in mind, need a Digital Marketer in Kolkata, 
                 or just want to connect, I'm always open to new opportunities and conversations.
               </p>
             </div>
