@@ -27,8 +27,7 @@ const Hero = () => {
                 Digital Marketing Specialist
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                Hello, I'm{' '}
-                <span className="gradient-text">Deep Kumar Das</span>
+                <span className="gradient-text">Deep Kumar Das</span> – Digital Marketer in Kolkata
               </h1>
               <h2 className="text-xl sm:text-2xl text-muted-foreground mt-4 font-medium">
                 Digital Marketer & Creative Design Specialist
