@@ -20,14 +20,6 @@ const Portfolio = () => {
       link: 'https://consciously-crafted-creations.lovable.app/'
     },
     {
-      title: 'WordPress Business Site',
-      description: 'Responsive business website built with WordPress, optimized for SEO and conversions.',
-      category: 'Web Development',
-      icon: Code,
-      tech: ['WordPress', 'SEO', 'Responsive Design'],
-      link: 'https://dasdeepkumar.nihtstudents.com'
-    },
-    {
       title: 'Brand Identity System',
       description: 'Complete brand manual including logo design, color palette, and typography guidelines.',
       category: 'Brand Design',
