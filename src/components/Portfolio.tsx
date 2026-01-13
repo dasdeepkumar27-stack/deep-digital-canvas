@@ -32,6 +32,7 @@ const Portfolio = () => {
       description: 'Complete brand guidelines for Panchabanjan, a Bengali fine dining restaurant in Kolkata. Includes brand voice, mission, vision, and visual identity system.',
       category: 'Brand Design',
       icon: Figma,
+      featured: true,
       tech: ['Brand Guidelines', 'PowerPoint', 'Brand Strategy', 'Class Project'],
       link: '/projects/panchabanjan-brand-manual.pptx'
     },
