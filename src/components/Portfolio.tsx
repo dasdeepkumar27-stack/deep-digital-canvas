@@ -1,6 +1,9 @@
-import { ExternalLink, Figma, Code, Smartphone, Instagram, Globe, Video, Facebook } from 'lucide-react';
+import { ExternalLink, Figma, Code, Smartphone, Instagram, Globe, Video, Facebook, X } from 'lucide-react';
+import { useState } from 'react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 const Portfolio = () => {
+  const [pptModalOpen, setPptModalOpen] = useState(false);
   const projects = [
     {
       title: 'GRAVIX - UI/UX Design Prototype',
@@ -34,7 +37,8 @@ const Portfolio = () => {
       icon: Figma,
       featured: true,
       tech: ['Brand Guidelines', 'PowerPoint', 'Brand Strategy', 'Class Project'],
-      link: '/projects/panchabanjan-brand-manual.pptx'
+      link: '/projects/panchabanjan-brand-manual.pptx',
+      isPpt: true
     },
     {
       title: 'Social Media Campaign',
@@ -223,15 +227,25 @@ const Portfolio = () => {
                 <div className="flex items-center justify-between pt-4 border-t border-border">
                   <span className="text-sm text-muted-foreground">{project.link ? 'Live Project' : 'Practice Project'}</span>
                   {project.link ? (
-                    <a 
-                      href={project.link}
-                      target={project.isVideo ? '_self' : '_blank'}
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors"
-                    >
-                      {project.isVideo ? 'Watch Video' : 'View Prototype'}
-                      <ExternalLink className="ml-1 h-3 w-3" />
-                    </a>
+                    project.isPpt ? (
+                      <button 
+                        onClick={() => setPptModalOpen(true)}
+                        className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors"
+                      >
+                        View Presentation
+                        <ExternalLink className="ml-1 h-3 w-3" />
+                      </button>
+                    ) : (
+                      <a 
+                        href={project.link}
+                        target={project.isVideo ? '_self' : '_blank'}
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors"
+                      >
+                        {project.isVideo ? 'Watch Video' : 'View Prototype'}
+                        <ExternalLink className="ml-1 h-3 w-3" />
+                      </a>
+                    )
                   ) : (
                     <button className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors">
                       View Details
@@ -263,6 +277,22 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
+
+      {/* PPT Viewer Modal */}
+      <Dialog open={pptModalOpen} onOpenChange={setPptModalOpen}>
+        <DialogContent className="max-w-6xl w-[95vw] h-[85vh] p-0">
+          <DialogHeader className="p-4 pb-0">
+            <DialogTitle className="text-xl font-bold">Panchabanjan Brand Manual</DialogTitle>
+          </DialogHeader>
+          <div className="flex-1 p-4 pt-2 h-full">
+            <iframe
+              src={`https://docs.google.com/gview?url=${window.location.origin}/projects/panchabanjan-brand-manual.pptx&embedded=true`}
+              className="w-full h-[calc(85vh-80px)] rounded-lg border border-border"
+              title="Panchabanjan Brand Manual"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
