@@ -28,6 +28,14 @@ const Portfolio = () => {
       link: 'https://docs.google.com/spreadsheets/d/1OeKH_lCxTURVHo6yVJAA6aeCkVABiX7pze4XSckBPaM/edit?gid=0#gid=0'
     },
     {
+      title: 'Panchabanjan Brand Manual',
+      description: 'Complete brand guidelines for Panchabanjan, a Bengali fine dining restaurant in Kolkata. Includes brand voice, mission, vision, and visual identity system.',
+      category: 'Brand Design',
+      icon: Figma,
+      tech: ['Brand Guidelines', 'PowerPoint', 'Brand Strategy', 'Class Project'],
+      link: '/projects/panchabanjan-brand-manual.pptx'
+    },
+    {
       title: 'Social Media Campaign',
       description: 'Instagram page design and content calendar for a local business, increasing engagement by 40%.',
       category: 'Social Media',
