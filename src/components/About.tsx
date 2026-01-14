@@ -17,7 +17,7 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            As a Digital Marketer in Kolkata, I'm passionate about digital marketing and design, constantly learning and growing in the field
+            As a junior Performance Creative Specialist, I'm passionate about crafting ad creatives that convert and video content that engages
           </p>
         </div>
 
@@ -27,13 +27,13 @@ const About = () => {
             <div className="glass-card p-8">
               <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed">
-                My journey as a Digital Marketer in Kolkata began with a curiosity about how brands connect with their audiences online. As a dedicated student at NIHT Bhawanipur, Kolkata, I've immersed myself in learning the intricacies of SEO, content optimization, and visual design.
+                My journey as a Performance Creative Specialist began with a curiosity about what makes people click and convert. As a dedicated student at NIHT Bhawanipur, Kolkata, I've immersed myself in learning video editing, ad creative design, and conversion-focused UI/UX.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I believe that great digital marketing combines analytical thinking with creative expression. Through my studies and hands-on practice, I've developed skills in graphics design, WordPress development, and UI/UX design using Figma. My goal is to create compelling digital experiences that not only look great but also drive meaningful results.
+                I believe that great ad creatives combine visual storytelling with an understanding of what drives action. Through my studies and hands-on practice, I've developed skills in short-form video editing, graphic design for ads, and UI/UX design using Figma. My goal is to create compelling creatives that capture attention and drive conversions.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Every project is an opportunity to learn something new, and I approach each challenge with enthusiasm and a growth mindset. I'm excited to apply my skills in real-world scenarios and contribute to innovative digital marketing campaigns.
+                Every project is an opportunity to learn something new, and I approach each challenge with enthusiasm and a growth mindset. I'm excited to apply my skills in creating performance-driven ad creatives for paid marketing campaigns.
               </p>
               </div>
             </div>
@@ -47,8 +47,8 @@ const About = () => {
                   <Briefcase className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">Professional Skills</h3>
-                  <p className="font-medium">Digital Marketing Intern</p>
+                  <h3 className="text-lg font-semibold mb-2">Current Training</h3>
+                  <p className="font-medium">Performance Creative Trainee</p>
                   <p className="text-sm text-muted-foreground">NIHT Bhawanipur, Kolkata</p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ const About = () => {
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Approach</h3>
                   <p className="text-muted-foreground">Growth mindset with continuous learning</p>
-                  <p className="text-sm text-muted-foreground mt-1">Data-driven creative solutions</p>
+                  <p className="text-sm text-muted-foreground mt-1">Conversion-focused creative thinking</p>
                 </div>
               </div>
             </div>

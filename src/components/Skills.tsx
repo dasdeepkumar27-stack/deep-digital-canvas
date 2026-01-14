@@ -14,64 +14,64 @@ import {
 const Skills = () => {
   const skills = [
     {
-      icon: Code,
-      title: 'WordPress Development',
-      description: 'Creating responsive and user-friendly websites',
-      color: 'text-blue-600'
+      icon: Camera,
+      title: 'Short-Form Video Ads',
+      description: 'Creating engaging video ads for paid campaigns',
+      color: 'text-red-600'
+    },
+    {
+      icon: Palette,
+      title: 'Ad Creative Design',
+      description: 'High-converting static and motion graphics for ads',
+      color: 'text-blue-500'
+    },
+    {
+      icon: Figma,
+      title: 'UI/UX for Conversion',
+      description: 'Landing pages and ad designs optimized for action',
+      color: 'text-pink-600'
     },
     {
       icon: Layout,
-      title: 'Portfolio Website Design',
-      description: 'Custom portfolio designs crafted in Figma',
+      title: 'Landing Page Design',
+      description: 'Conversion-focused page designs in Figma',
       color: 'text-cyan-600',
       link: 'https://www.figma.com/design/hVz2J6WNxy2qwlIFEjr7cd/GRAVIX?node-id=5-29&p=f&t=BnvmPuESvi4h1Cf6-0'
     },
     {
       icon: Search,
-      title: 'SEO Optimization',
-      description: 'Content optimization and search engine strategies',
+      title: 'Google Ads Basics',
+      description: 'Fundamental understanding of paid search campaigns',
       color: 'text-green-600'
     },
     {
-      icon: Calendar,
-      title: 'Social Media Calendar',
-      description: 'Strategic content planning and scheduling',
-      color: 'text-purple-600'
-    },
-    {
-      icon: FileText,
-      title: 'Brand Manuals',
-      description: 'Comprehensive brand guideline development',
-      color: 'text-orange-600'
-    },
-    {
-      icon: Palette,
-      title: 'Adobe Photoshop',
-      description: 'Advanced photo editing and graphic design',
-      color: 'text-blue-500'
-    },
-    {
-      icon: Camera,
-      title: 'Video Editing',
-      description: 'Creating engaging video content',
-      color: 'text-red-600'
-    },
-    {
-      icon: Figma,
-      title: 'Figma Design',
-      description: 'UI/UX design, portfolio design, website design',
-      color: 'text-pink-600'
-    },
-    {
       icon: Instagram,
-      title: 'Instagram Page Creation',
-      description: 'Social media presence and content strategy',
+      title: 'Social Media Ads',
+      description: 'Creative content for Meta and social ad platforms',
       color: 'text-gradient-to-r from-purple-500 to-pink-500'
     },
     {
+      icon: FileText,
+      title: 'Brand Guidelines',
+      description: 'Consistent visual identity for ad campaigns',
+      color: 'text-orange-600'
+    },
+    {
+      icon: Code,
+      title: 'Basic Web Development',
+      description: 'WordPress and landing page implementation',
+      color: 'text-blue-600'
+    },
+    {
+      icon: Calendar,
+      title: 'Content Planning',
+      description: 'Strategic ad creative scheduling and delivery',
+      color: 'text-purple-600'
+    },
+    {
       icon: Smartphone,
-      title: 'Flipkart Application Design',
-      description: 'Mobile app UI/UX design concepts',
+      title: 'Mobile-First Design',
+      description: 'Ad creatives optimized for mobile experiences',
       color: 'text-indigo-600'
     }
   ];
@@ -92,7 +92,7 @@ const Skills = () => {
             My <span className="gradient-text">Skills</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            A comprehensive toolkit for modern digital marketing and creative design
+            A focused toolkit for creating high-converting ad creatives and video content
           </p>
         </div>
 
@@ -146,12 +146,12 @@ const Skills = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5"></div>
             <div className="relative z-10">
             <h3 className="text-2xl font-bold mb-4">
-              Specialized in <span className="gradient-text">Figma Design</span>
+              Specialized in <span className="gradient-text">Performance Creatives</span>
             </h3>
             <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              From UI/UX design to complete website mockups, I leverage Figma's powerful features to create 
-              stunning, user-centered designs. My portfolio includes everything from mobile app interfaces 
-              to comprehensive brand identity systems.
+              From short-form video ads to static ad creatives, I focus on building visuals that drive clicks and conversions. 
+              My work combines video editing skills with UI/UX principles to create ad content 
+              that captures attention and motivates action.
             </p>
             </div>
           </div>

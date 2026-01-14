@@ -29,15 +29,15 @@ const Hero = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 Hello, I'm{' '}
                 <span className="gradient-text">Deep Kumar Das</span>
-                <span className="block text-2xl sm:text-3xl mt-2 text-muted-foreground font-medium">Digital Marketer in Kolkata</span>
+                <span className="block text-2xl sm:text-3xl mt-2 text-muted-foreground font-medium">Performance Creative Specialist</span>
               </h1>
               <h2 className="text-xl sm:text-2xl text-muted-foreground mt-4 font-medium">
-                Digital Marketer & Creative Design Specialist
+                Ad Creatives & Short-Form Video Ads
               </h2>
             </div>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              I specialize in SEO, graphics design, and Figma, constantly seeking new ways to optimize content and craft visually stunning and user-friendly designs.
+              I create high-converting ad creatives and engaging short-form video ads for paid marketing campaigns. Skilled in video editing, UI/UX for conversion, and Google Ads fundamentals.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -75,7 +75,7 @@ const Hero = () => {
               <div className="relative bg-white rounded-3xl p-8 shadow-xl">
                 <img
                   src={deepProfile}
-                  alt="Deep Kumar Das - Digital Marketer in Kolkata"
+                  alt="Deep Kumar Das - Performance Creative Specialist"
                   className="w-full max-w-md mx-auto aspect-square object-cover rounded-2xl shadow-lg"
                 />
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm animate-float">
