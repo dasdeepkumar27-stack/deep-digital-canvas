@@ -53,7 +53,7 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-                Whether you have a project in mind, need a Digital Marketer in Kolkata, 
+                Whether you have a project in mind, need a Performance Creative Specialist, 
                 or just want to connect, I'm always open to new opportunities and conversations.
               </p>
             </div>
