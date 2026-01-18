@@ -33,7 +33,7 @@ const About = () => {
                 I believe that great ad creatives combine visual storytelling with an understanding of what drives action. Through my studies and hands-on practice, I've developed skills in short-form video editing, graphic design for ads, and UI/UX design using Figma. My goal is to create compelling creatives that capture attention and drive conversions.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Every project is an opportunity to learn something new, and I approach each challenge with enthusiasm and a growth mindset. I'm excited to apply my skills in creating performance-driven ad creatives for paid marketing campaigns.
+                Every project is an opportunity to learn something new, and I approach each challenge with enthusiasm and a growth mindset. As a Performance Creative Specialist, I'm excited to bring my skills to teams looking for fresh, conversion-focused ad creatives.
               </p>
               </div>
             </div>
