@@ -37,7 +37,7 @@ const Hero = () => {
             </div>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              I create high-converting ad creatives and engaging short-form video ads for paid marketing campaigns. Skilled in video editing, UI/UX for conversion, and Google Ads fundamentals.
+              As a Performance Creative Specialist, I craft high-converting ad creatives and engaging short-form video ads for paid marketing campaigns. Skilled in video editing, UI/UX for conversion, and Google Ads fundamentals.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
