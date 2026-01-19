@@ -69,7 +69,7 @@ const Hero = () => {
                   className="w-full max-w-md mx-auto aspect-square object-cover rounded-2xl shadow-lg"
                 />
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm animate-float">
-                  NIHT<br />Student
+                  NIHT<br />Intern
                 </div>
               </div>
             </div>
