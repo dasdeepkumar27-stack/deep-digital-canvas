@@ -27,7 +27,7 @@ const About = () => {
             <div className="glass-card p-8">
               <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed">
-                My journey as a Performance Creative Specialist began with a curiosity about what makes people click and convert. As a dedicated student at NIHT Bhawanipur, Kolkata, I've immersed myself in learning video editing, ad creative design, and conversion-focused UI/UX.
+                My journey as a Performance Creative Specialist began with a curiosity about what makes people click and convert. As a dedicated intern at NIHT Bhawanipur, Kolkata, I've immersed myself in learning video editing, ad creative design, and conversion-focused UI/UX.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 I believe that great ad creatives combine visual storytelling with an understanding of what drives action. Through my studies and hands-on practice, I've developed skills in short-form video editing, graphic design for ads, and UI/UX design using Figma. My goal is to create compelling creatives that capture attention and drive conversions.
