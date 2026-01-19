@@ -1,4 +1,4 @@
-import { ArrowRight, FileText } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import deepProfile from '@/assets/deep-profile-new.png';
 
 const Hero = () => {
@@ -56,16 +56,6 @@ const Hero = () => {
               </button>
             </div>
             
-            <div className="mt-8 pt-8 border-t border-border">
-              <a 
-                href="/DEEP_KUMAR_DAS_RESUME.pdf"
-                download
-                className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                <FileText className="mr-2 h-4 w-4" />
-                Download Resume
-              </a>
-            </div>
           </div>
           
           {/* Profile Image */}
