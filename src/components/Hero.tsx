@@ -1,7 +1,10 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, FileText } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import deepProfile from '@/assets/deep-profile-new.png';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -49,10 +52,11 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
-                onClick={() => scrollToSection('#contact')}
+                onClick={() => navigate('/resume')}
                 className="btn-outline inline-flex items-center justify-center"
               >
-                Contact Me
+                <FileText className="mr-2 h-5 w-5" />
+                View Resume
               </button>
             </div>
             
