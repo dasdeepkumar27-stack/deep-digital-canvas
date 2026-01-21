@@ -1,9 +1,17 @@
-import { useEffect } from 'react';
-import { ArrowLeft } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowLeft, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Document, Page, pdfjs } from 'react-pdf';
+
+// Set up PDF.js worker
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const ResumeViewer = () => {
   const navigate = useNavigate();
+  const [numPages, setNumPages] = useState<number>(0);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [scale, setScale] = useState(1);
+  const [containerWidth, setContainerWidth] = useState(800);
 
   useEffect(() => {
     // Disable right-click context menu
@@ -23,17 +31,46 @@ const ResumeViewer = () => {
       }
     };
 
+    // Handle resize for responsive PDF
+    const updateWidth = () => {
+      const width = Math.min(window.innerWidth - 32, 800);
+      setContainerWidth(width);
+    };
+
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
     document.addEventListener('contextmenu', handleContextMenu);
     document.addEventListener('keydown', handleKeyDown);
 
     return () => {
+      window.removeEventListener('resize', updateWidth);
       document.removeEventListener('contextmenu', handleContextMenu);
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
 
+  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
+    setNumPages(numPages);
+  };
+
+  const goToPrevPage = () => {
+    setPageNumber(prev => Math.max(prev - 1, 1));
+  };
+
+  const goToNextPage = () => {
+    setPageNumber(prev => Math.min(prev + 1, numPages));
+  };
+
+  const zoomIn = () => {
+    setScale(prev => Math.min(prev + 0.25, 2));
+  };
+
+  const zoomOut = () => {
+    setScale(prev => Math.max(prev - 0.25, 0.5));
+  };
+
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col select-none">
       {/* Header */}
       <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,47 +87,92 @@ const ResumeViewer = () => {
         </div>
       </header>
 
-      {/* PDF Viewer Container */}
-      <main className="flex-1 pt-20 pb-8 px-4">
-        <div className="max-w-4xl mx-auto h-full">
-          <div 
-            className="relative w-full bg-muted rounded-xl overflow-hidden shadow-xl border border-border"
-            style={{ height: 'calc(100vh - 8rem)' }}
-          >
-            {/* PDF object viewer */}
-            <object
-              data="/resume/DEEP_KUMAR_RESUME.pdf#toolbar=0&navpanes=0&scrollbar=1"
-              type="application/pdf"
-              className="w-full h-full"
-              style={{ 
-                userSelect: 'none'
-              }}
-            >
-              {/* Fallback for browsers that don't support object */}
-              <embed
-                src="/resume/DEEP_KUMAR_RESUME.pdf#toolbar=0&navpanes=0"
-                type="application/pdf"
-                className="w-full h-full"
-              />
-            </object>
-          </div>
-          
-          {/* Mobile-friendly message */}
-          <p className="text-center text-muted-foreground text-sm mt-4">
-            Scroll to read the full resume • View only
-          </p>
-        </div>
-      </main>
+      {/* PDF Controls */}
+      <div className="fixed top-20 left-1/2 -translate-x-1/2 z-40 bg-background/90 backdrop-blur-md rounded-full px-4 py-2 shadow-lg border border-border flex items-center gap-4">
+        <button
+          onClick={goToPrevPage}
+          disabled={pageNumber <= 1}
+          className="p-1 hover:bg-muted rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          aria-label="Previous page"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        
+        <span className="text-sm font-medium min-w-[80px] text-center">
+          {pageNumber} / {numPages}
+        </span>
+        
+        <button
+          onClick={goToNextPage}
+          disabled={pageNumber >= numPages}
+          className="p-1 hover:bg-muted rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          aria-label="Next page"
+        >
+          <ChevronRight size={20} />
+        </button>
 
-      {/* Prevent text selection globally on this page */}
-      <style>{`
-        .resume-page * {
-          user-select: none !important;
-          -webkit-user-select: none !important;
-          -moz-user-select: none !important;
-          -ms-user-select: none !important;
-        }
-      `}</style>
+        <div className="w-px h-6 bg-border" />
+
+        <button
+          onClick={zoomOut}
+          disabled={scale <= 0.5}
+          className="p-1 hover:bg-muted rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          aria-label="Zoom out"
+        >
+          <ZoomOut size={18} />
+        </button>
+        
+        <span className="text-sm font-medium min-w-[50px] text-center">
+          {Math.round(scale * 100)}%
+        </span>
+        
+        <button
+          onClick={zoomIn}
+          disabled={scale >= 2}
+          className="p-1 hover:bg-muted rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          aria-label="Zoom in"
+        >
+          <ZoomIn size={18} />
+        </button>
+      </div>
+
+      {/* PDF Viewer Container */}
+      <main className="flex-1 pt-32 pb-8 px-4 overflow-auto">
+        <div className="flex justify-center">
+          <div 
+            className="bg-white rounded-xl shadow-xl overflow-auto"
+            style={{ maxHeight: 'calc(100vh - 12rem)' }}
+          >
+            <Document
+              file="/resume/DEEP_KUMAR_RESUME.pdf"
+              onLoadSuccess={onDocumentLoadSuccess}
+              loading={
+                <div className="flex items-center justify-center w-full h-96">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                </div>
+              }
+              error={
+                <div className="flex items-center justify-center w-full h-96 text-muted-foreground">
+                  <p>Failed to load resume. Please try again later.</p>
+                </div>
+              }
+            >
+              <Page
+                pageNumber={pageNumber}
+                scale={scale}
+                width={containerWidth}
+                renderTextLayer={false}
+                renderAnnotationLayer={false}
+              />
+            </Document>
+          </div>
+        </div>
+        
+        {/* View only message */}
+        <p className="text-center text-muted-foreground text-sm mt-4">
+          View only • Use controls to navigate
+        </p>
+      </main>
     </div>
   );
 };
