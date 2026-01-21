@@ -57,22 +57,22 @@ const ResumeViewer = () => {
             className="relative w-full bg-muted rounded-xl overflow-hidden shadow-xl border border-border"
             style={{ height: 'calc(100vh - 8rem)' }}
           >
-            {/* Overlay to prevent easy interaction */}
-            <div 
-              className="absolute inset-0 z-10 pointer-events-none select-none"
-              style={{ userSelect: 'none' }}
-            />
-            
-            {/* PDF iframe with toolbar disabled */}
-            <iframe
-              src="/resume/DEEP_KUMAR_RESUME.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
-              className="w-full h-full border-0"
-              title="Deep Kumar Das - Resume"
+            {/* PDF object viewer */}
+            <object
+              data="/resume/DEEP_KUMAR_RESUME.pdf#toolbar=0&navpanes=0&scrollbar=1"
+              type="application/pdf"
+              className="w-full h-full"
               style={{ 
-                pointerEvents: 'auto',
                 userSelect: 'none'
               }}
-            />
+            >
+              {/* Fallback for browsers that don't support object */}
+              <embed
+                src="/resume/DEEP_KUMAR_RESUME.pdf#toolbar=0&navpanes=0"
+                type="application/pdf"
+                className="w-full h-full"
+              />
+            </object>
           </div>
           
           {/* Mobile-friendly message */}
