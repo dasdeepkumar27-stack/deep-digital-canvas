@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const menuItems = [
     { name: 'Home', href: '#home' },
@@ -40,6 +42,13 @@ const Navigation = () => {
                   {item.name}
                 </button>
               ))}
+              <button
+                onClick={() => navigate('/resume')}
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
+              >
+                <FileText size={16} />
+                Resume
+              </button>
             </div>
           </div>
 
@@ -68,6 +77,16 @@ const Navigation = () => {
                 {item.name}
               </button>
             ))}
+            <button
+              onClick={() => {
+                navigate('/resume');
+                setIsOpen(false);
+              }}
+              className="flex items-center gap-2 text-primary px-3 py-2 text-base font-medium w-full text-left"
+            >
+              <FileText size={18} />
+              Resume
+            </button>
           </div>
         </div>
       )}
