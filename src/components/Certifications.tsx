@@ -7,19 +7,19 @@ const Certifications = () => {
       name: 'Google Ads Video Certification',
       organization: 'Google',
       year: '2026',
-      certificateUrl: '/certificates/google-ads-video.pdf'
+      certificateUrl: '/certificates/video-certification.pdf'
     },
     {
       name: 'Google Analytics Certification',
       organization: 'Google',
       year: '2026',
-      certificateUrl: '/certificates/certificate-2.pdf'
+      certificateUrl: '/certificates/analytics-certification.pdf'
     },
     {
       name: 'Google Ads Search Certification',
       organization: 'Google',
       year: '2026',
-      certificateUrl: '/certificates/certificate-3.pdf'
+      certificateUrl: '/certificates/search-certification.pdf'
     }
   ];
 
