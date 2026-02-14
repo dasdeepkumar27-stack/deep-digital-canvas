@@ -72,8 +72,8 @@ const Hero = () => {
                   alt="Deep Kumar Das - Performance Creative Specialist & Digital Marketing Intern at GOADSLIVE"
                   className="w-full max-w-md mx-auto aspect-square object-cover rounded-2xl shadow-lg"
                 />
-                <div className="absolute -top-4 -right-4 w-28 h-28 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-xs text-center leading-tight animate-float shadow-lg shadow-primary/30">
-                  Performance<br />Marketing Intern<br /><span className="text-[10px] font-medium opacity-90">GOADSLIVE</span>
+                <div className="absolute -top-4 -right-4 w-28 h-28 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm text-center leading-tight animate-float shadow-lg shadow-primary/30">
+                  GoAdsLive<br />Intern
                 </div>
               </div>
             </div>
