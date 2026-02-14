@@ -17,7 +17,7 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            As a junior Performance Creative Specialist, I'm passionate about crafting ad creatives that convert and video content that engages
+            A Performance Creative Specialist passionate about crafting ad creatives that convert and video content that engages
           </p>
         </div>
 
@@ -27,13 +27,13 @@ const About = () => {
             <div className="glass-card p-8">
               <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed">
-                My journey as a Performance Creative Specialist began with a curiosity about what makes people click and convert. As a dedicated intern at NIHT Bhawanipur, Kolkata, I've immersed myself in learning video editing, ad creative design, and conversion-focused UI/UX.
+                My journey as a Performance Creative Specialist began with a curiosity about what makes people click and convert. Currently working as a Digital Marketing Intern at <strong className="text-primary">GOADSLIVE</strong>, I manage Meta Ads campaigns, optimize ad creatives, and handle client performance reporting.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I believe that great ad creatives combine visual storytelling with an understanding of what drives action. Through my studies and hands-on practice, I've developed skills in short-form video editing, graphic design for ads, and UI/UX design using Figma. My goal is to create compelling creatives that capture attention and drive conversions.
+                I believe that great ad creatives combine visual storytelling with an understanding of what drives action. Through hands-on experience at GOADSLIVE and training at NIHT, I've developed skills in Meta Ads management, short-form video editing, GMB optimization, and UI/UX design for conversion.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Every project is an opportunity to learn something new, and I approach each challenge with enthusiasm and a growth mindset. As a Performance Creative Specialist, I'm excited to bring my skills to teams looking for fresh, conversion-focused ad creatives.
+                Every project is an opportunity to learn something new, and I approach each challenge with enthusiasm and a growth mindset. I'm excited to bring my skills to teams looking for fresh, conversion-focused ad creatives and performance marketing solutions.
               </p>
               </div>
             </div>
@@ -41,15 +41,18 @@ const About = () => {
 
           {/* Professional Details */}
           <div className="space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="glass-card p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+            <div className="glass-card p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 border-l-4 border-l-primary">
               <div className="flex items-start space-x-4">
-                <div className="bg-primary/10 p-3 rounded-lg">
+                <div className="bg-gradient-to-br from-primary/20 to-primary/10 p-3 rounded-lg">
                   <Briefcase className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">Current Training</h3>
-                  <p className="font-medium">Performance Creative Trainee</p>
-                  <p className="text-sm text-muted-foreground">NIHT Bhawanipur, Kolkata</p>
+                  <h3 className="text-lg font-semibold mb-1">Current Role</h3>
+                  <p className="font-semibold text-primary">Digital Marketing Intern</p>
+                  <p className="text-sm font-medium">GOADSLIVE · <span className="text-muted-foreground">Present</span></p>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                    Managing Meta Ads campaigns, creating and optimizing ad creatives, preparing client ad performance reports, handling client ad accounts and social media pages, setting up and optimizing Google My Business (GMB) profiles and posts, and creating AI-based videos and performing video editing for marketing campaigns.
+                  </p>
                 </div>
               </div>
             </div>
@@ -57,7 +60,20 @@ const About = () => {
             <div className="glass-card p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="bg-primary/10 p-3 rounded-lg">
-                  <GraduationCap className="h-6 w-6 text-primary" />
+                  <Briefcase className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">Previous Training</h3>
+                  <p className="font-medium">Performance Creative Trainee</p>
+                  <p className="text-sm text-muted-foreground">NIHT Bhawanipur, Kolkata</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="glass-card p-6 hover:shadow-xl hover:shadow-secondary/10 transition-all duration-300">
+              <div className="flex items-start space-x-4">
+                <div className="bg-gradient-to-br from-secondary/20 to-secondary/10 p-3 rounded-lg">
+                  <GraduationCap className="h-6 w-6 text-secondary" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Education</h3>

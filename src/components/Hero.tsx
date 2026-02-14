@@ -35,12 +35,12 @@ const Hero = () => {
                 <span className="block text-2xl sm:text-3xl mt-2 text-muted-foreground font-medium">Performance Creative Specialist</span>
               </h1>
               <h2 className="text-xl sm:text-2xl text-muted-foreground mt-4 font-medium">
-                Ad Creatives & Short-Form Video Ads
+                Digital Marketing Intern at <span className="text-primary font-semibold">GOADSLIVE</span>
               </h2>
             </div>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              As a Performance Creative Specialist, I craft high-converting ad creatives and engaging short-form video ads for paid marketing campaigns. Skilled in video editing, UI/UX for conversion, and Google Ads fundamentals.
+              As a Performance Creative Specialist & Digital Marketing Intern at GOADSLIVE, I manage Meta Ads campaigns, craft high-converting ad creatives, and create engaging short-form video ads. Skilled in video editing, GMB optimization, client reporting, and Google Ads fundamentals.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -69,11 +69,11 @@ const Hero = () => {
               <div className="relative bg-white rounded-3xl p-8 shadow-xl">
                 <img
                   src={deepProfile}
-                  alt="Deep Kumar Das - Performance Creative Specialist"
+                  alt="Deep Kumar Das - Performance Creative Specialist & Digital Marketing Intern at GOADSLIVE"
                   className="w-full max-w-md mx-auto aspect-square object-cover rounded-2xl shadow-lg"
                 />
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm animate-float">
-                  NIHT<br />Intern
+                <div className="absolute -top-4 -right-4 w-28 h-28 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-xs text-center leading-tight animate-float shadow-lg shadow-primary/30">
+                  Digital Marketing<br />Intern<br /><span className="text-[10px] font-medium opacity-90">GOADSLIVE</span>
                 </div>
               </div>
             </div>
