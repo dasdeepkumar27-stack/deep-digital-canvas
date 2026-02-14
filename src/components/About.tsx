@@ -27,7 +27,7 @@ const About = () => {
             <div className="glass-card p-8">
               <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed">
-                My journey as a Performance Creative Specialist began with a curiosity about what makes people click and convert. Currently working as a Digital Marketing Intern at <strong className="text-primary">GOADSLIVE</strong>, I manage Meta Ads campaigns, optimize ad creatives, and handle client performance reporting.
+                My journey as a Performance Creative Specialist began with a curiosity about what makes people click and convert. Currently working as a Performance Marketing Intern at <strong className="text-primary">GOADSLIVE</strong>, I manage Meta Ads campaigns, optimize performance creatives, and analyze ad metrics to improve conversion rates.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 I believe that great ad creatives combine visual storytelling with an understanding of what drives action. Through hands-on experience at GOADSLIVE and training at NIHT, I've developed skills in Meta Ads management, short-form video editing, GMB optimization, and UI/UX design for conversion.
@@ -48,10 +48,10 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1">Current Role</h3>
-                  <p className="font-semibold text-primary">Digital Marketing Intern</p>
+                  <p className="font-semibold text-primary">Performance Marketing Intern</p>
                   <p className="text-sm font-medium">GOADSLIVE · <span className="text-muted-foreground">Present</span></p>
                   <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-                    Managing Meta Ads campaigns, creating and optimizing ad creatives, preparing client ad performance reports, handling client ad accounts and social media pages, setting up and optimizing Google My Business (GMB) profiles and posts, and creating AI-based videos and performing video editing for marketing campaigns.
+                    Working on Meta Ads campaign management, performance creative optimization, audience targeting, and analyzing ad performance metrics to improve conversion rates and ROI.
                   </p>
                 </div>
               </div>
