@@ -35,12 +35,12 @@ const Hero = () => {
                 <span className="block text-2xl sm:text-3xl mt-2 text-muted-foreground font-medium">Performance Creative Specialist</span>
               </h1>
               <h2 className="text-xl sm:text-2xl text-muted-foreground mt-4 font-medium">
-                Digital Marketing Intern at <span className="text-primary font-semibold">GOADSLIVE</span>
+                Performance Marketing Intern at <span className="text-primary font-semibold">GOADSLIVE</span>
               </h2>
             </div>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              As a Performance Creative Specialist & Digital Marketing Intern at GOADSLIVE, I manage Meta Ads campaigns, craft high-converting ad creatives, and create engaging short-form video ads. Skilled in video editing, GMB optimization, client reporting, and Google Ads fundamentals.
+              As a Performance Creative Specialist & Performance Marketing Intern at GOADSLIVE, I manage Meta Ads campaigns, optimize performance creatives, analyze ad metrics, and craft high-converting short-form video ads to improve conversion rates and ROI.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -73,7 +73,7 @@ const Hero = () => {
                   className="w-full max-w-md mx-auto aspect-square object-cover rounded-2xl shadow-lg"
                 />
                 <div className="absolute -top-4 -right-4 w-28 h-28 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-xs text-center leading-tight animate-float shadow-lg shadow-primary/30">
-                  Digital Marketing<br />Intern<br /><span className="text-[10px] font-medium opacity-90">GOADSLIVE</span>
+                  Performance<br />Marketing Intern<br /><span className="text-[10px] font-medium opacity-90">GOADSLIVE</span>
                 </div>
               </div>
             </div>
