@@ -8,7 +8,8 @@ const Certifications = () => {
     { name: 'Google Ads Video Certification', organization: 'Google', year: '2026', certificateUrl: '/certificates/video-certification.jpg' },
     { name: 'Google Ads Display Certification', organization: 'Google', year: '2026', certificateUrl: '/certificates/display-certification.png' },
     { name: 'Google Analytics Certification', organization: 'Google', year: '2026', certificateUrl: '/certificates/analytics-certification.png' },
-    { name: 'Google Ads Search Certification', organization: 'Google', year: '2026', certificateUrl: '/certificates/search-certification.png' }
+    { name: 'Google Ads Search Certification', organization: 'Google', year: '2026', certificateUrl: '/certificates/search-certification.png' },
+    { name: 'Digital Marketing Certificate', organization: 'NIHT', year: '2026', certificateUrl: '/certificates/niht-digital-marketing.jpeg' }
   ];
 
   return (
