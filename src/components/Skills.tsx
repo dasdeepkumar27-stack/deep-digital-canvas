@@ -3,6 +3,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { FadeUp, StaggerContainer, StaggerItem } from './motion/AnimatedSection';
+import Tilt3DCard from './motion/Tilt3DCard';
 
 const Skills = () => {
   const skills = [
@@ -52,17 +53,17 @@ const Skills = () => {
 
             return (
               <StaggerItem key={skill.title}>
-                <motion.div whileHover={{ y: -4, scale: 1.02 }} transition={{ duration: 0.25 }}>
+                <Tilt3DCard tiltAmount={8} className="h-full">
                   {skill.link ? (
-                    <a href={skill.link} target="_blank" rel="noopener noreferrer" className="glass-card p-6 group block hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 cursor-pointer">
+                    <a href={skill.link} target="_blank" rel="noopener noreferrer" className="glass-card p-6 group block hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 cursor-pointer h-full">
                       {CardContent}
                     </a>
                   ) : (
-                    <div className="glass-card p-6 group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500">
+                    <div className="glass-card p-6 group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 h-full">
                       {CardContent}
                     </div>
                   )}
-                </motion.div>
+                </Tilt3DCard>
               </StaggerItem>
             );
           })}

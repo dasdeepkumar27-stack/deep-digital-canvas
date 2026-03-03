@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send, Linkedin, Instagram } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useToast } from '@/hooks/use-toast';
 import { FadeUp, SlideInLeft, SlideInRight } from './motion/AnimatedSection';
+import MagneticButton from './motion/MagneticButton';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -66,12 +67,16 @@ const Contact = () => {
             <div>
               <h4 className="font-semibold mb-4">Connect on Social Media</h4>
               <div className="flex space-x-4">
-                <motion.button whileHover={{ scale: 1.15, rotate: 5 }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-br from-primary/20 to-primary/10 hover:from-primary/30 hover:to-primary/20 p-3 rounded-lg transition-all duration-300">
-                  <Linkedin className="h-5 w-5 text-primary" />
-                </motion.button>
-                <motion.button whileHover={{ scale: 1.15, rotate: -5 }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-br from-secondary/20 to-secondary/10 hover:from-secondary/30 hover:to-secondary/20 p-3 rounded-lg transition-all duration-300">
-                  <Instagram className="h-5 w-5 text-secondary" />
-                </motion.button>
+                <MagneticButton strength={0.4}>
+                  <motion.button whileHover={{ scale: 1.15, rotate: 5 }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-br from-primary/20 to-primary/10 hover:from-primary/30 hover:to-primary/20 p-3 rounded-lg transition-all duration-300">
+                    <Linkedin className="h-5 w-5 text-primary" />
+                  </motion.button>
+                </MagneticButton>
+                <MagneticButton strength={0.4}>
+                  <motion.button whileHover={{ scale: 1.15, rotate: -5 }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-br from-secondary/20 to-secondary/10 hover:from-secondary/30 hover:to-secondary/20 p-3 rounded-lg transition-all duration-300">
+                    <Instagram className="h-5 w-5 text-secondary" />
+                  </motion.button>
+                </MagneticButton>
               </div>
             </div>
           </SlideInLeft>
@@ -110,15 +115,17 @@ const Contact = () => {
                     placeholder="Tell me about your project or just say hello!"
                   />
                 </div>
-                <motion.button
-                  whileHover={{ y: -2, scale: 1.01 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  className="w-full btn-hero group inline-flex items-center justify-center"
-                >
-                  Send Message
-                  <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
+                <MagneticButton className="w-full">
+                  <motion.button
+                    whileHover={{ y: -2, scale: 1.01 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    className="w-full btn-hero group inline-flex items-center justify-center"
+                  >
+                    Send Message
+                    <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </motion.button>
+                </MagneticButton>
               </form>
             </div>
           </SlideInRight>

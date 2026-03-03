@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { FadeUp, StaggerContainer, StaggerItem } from './motion/AnimatedSection';
+import Tilt3DCard from './motion/Tilt3DCard';
 
 const Portfolio = () => {
   const [pptModalOpen, setPptModalOpen] = useState(false);
@@ -64,48 +65,46 @@ const Portfolio = () => {
             const IconComponent = project.icon;
             return (
               <StaggerItem key={project.title}>
-                <motion.div
-                  whileHover={{ y: -6, scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  className={`portfolio-card ${project.featured ? 'md:col-span-2 lg:col-span-1' : ''}`}
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="bg-gradient-to-br from-primary/20 to-primary/10 p-3 rounded-lg">
-                      <IconComponent className="h-6 w-6 text-primary" />
+                <Tilt3DCard tiltAmount={6} className={`h-full ${project.featured ? 'md:col-span-2 lg:col-span-1' : ''}`}>
+                  <div className="portfolio-card h-full">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="bg-gradient-to-br from-primary/20 to-primary/10 p-3 rounded-lg">
+                        <IconComponent className="h-6 w-6 text-primary" />
+                      </div>
+                      {project.featured && (
+                        <span className="bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 rounded-full text-xs font-medium">Featured</span>
+                      )}
                     </div>
-                    {project.featured && (
-                      <span className="bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 rounded-full text-xs font-medium">Featured</span>
-                    )}
-                  </div>
-                  <div className="mb-4">
-                    <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{project.description}</p>
-                    <span className="inline-block px-3 py-1 bg-muted rounded-full text-xs font-medium text-muted-foreground">{project.category}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech) => (
-                      <span key={tech} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-md">{tech}</span>
-                    ))}
-                  </div>
-                  <div className="flex items-center justify-between pt-4 border-t border-border">
-                    <span className="text-sm text-muted-foreground">{project.link ? 'Live Project' : 'Practice Project'}</span>
-                    {project.link ? (
-                      project.isPpt ? (
-                        <button onClick={() => setPptModalOpen(true)} className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors">
-                          View Presentation <ExternalLink className="ml-1 h-3 w-3" />
-                        </button>
+                    <div className="mb-4">
+                      <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                      <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{project.description}</p>
+                      <span className="inline-block px-3 py-1 bg-muted rounded-full text-xs font-medium text-muted-foreground">{project.category}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tech.map((tech) => (
+                        <span key={tech} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-md">{tech}</span>
+                      ))}
+                    </div>
+                    <div className="flex items-center justify-between pt-4 border-t border-border">
+                      <span className="text-sm text-muted-foreground">{project.link ? 'Live Project' : 'Practice Project'}</span>
+                      {project.link ? (
+                        project.isPpt ? (
+                          <button onClick={() => setPptModalOpen(true)} className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors">
+                            View Presentation <ExternalLink className="ml-1 h-3 w-3" />
+                          </button>
+                        ) : (
+                          <a href={project.link} target={project.isVideo ? '_self' : '_blank'} rel="noopener noreferrer" className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors">
+                            {project.isVideo ? 'Watch Video' : 'View Prototype'} <ExternalLink className="ml-1 h-3 w-3" />
+                          </a>
+                        )
                       ) : (
-                        <a href={project.link} target={project.isVideo ? '_self' : '_blank'} rel="noopener noreferrer" className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors">
-                          {project.isVideo ? 'Watch Video' : 'View Prototype'} <ExternalLink className="ml-1 h-3 w-3" />
-                        </a>
-                      )
-                    ) : (
-                      <button className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors">
-                        View Details <ExternalLink className="ml-1 h-3 w-3" />
-                      </button>
-                    )}
+                        <button className="inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors">
+                          View Details <ExternalLink className="ml-1 h-3 w-3" />
+                        </button>
+                      )}
+                    </div>
                   </div>
-                </motion.div>
+                </Tilt3DCard>
               </StaggerItem>
             );
           })}
