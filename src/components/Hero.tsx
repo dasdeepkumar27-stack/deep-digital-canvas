@@ -1,10 +1,23 @@
 import { ArrowRight, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import deepProfile from '@/assets/deep-profile-new.png';
+import MagneticButton from './motion/MagneticButton';
 
 const Hero = () => {
   const navigate = useNavigate();
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+
+  const profileRotateX = useTransform(scrollYProgress, [0, 1], [0, 12]);
+  const profileRotateY = useTransform(scrollYProgress, [0, 1], [0, -8]);
+  const profileScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
+  const floatY1 = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const floatY2 = useTransform(scrollYProgress, [0, 1], [0, -30]);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -23,20 +36,28 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
+    <section ref={sectionRef} id="home" className="min-h-screen flex items-center relative overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 hero-gradient opacity-10"></div>
       
-      {/* Floating Elements */}
+      {/* Parallax Floating Elements */}
       <motion.div
         className="absolute top-20 right-20 w-32 h-32 bg-primary/20 rounded-full blur-xl"
-        animate={{ y: [0, -15, 0], scale: [1, 1.05, 1] }}
+        style={{ y: floatY1 }}
+        animate={{ scale: [1, 1.05, 1] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
         className="absolute bottom-20 left-10 w-24 h-24 bg-secondary/20 rounded-full blur-xl"
-        animate={{ y: [0, -10, 0], scale: [1, 1.08, 1] }}
+        style={{ y: floatY2 }}
+        animate={{ scale: [1, 1.08, 1] }}
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+      />
+      <motion.div
+        className="absolute top-1/3 left-1/4 w-16 h-16 bg-accent/15 rounded-full blur-lg"
+        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -90]) }}
+        animate={{ scale: [1, 1.1, 1] }}
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
       />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
@@ -92,34 +113,47 @@ const Hero = () => {
               variants={textVariants}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <motion.button
-                whileHover={{ y: -3, scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => scrollToSection('#portfolio')}
-                className="btn-hero group inline-flex items-center justify-center"
-              >
-                View My Work
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-              <motion.button
-                whileHover={{ y: -3, scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => navigate('/resume')}
-                className="btn-outline inline-flex items-center justify-center"
-              >
-                <FileText className="mr-2 h-5 w-5" />
-                View Resume
-              </motion.button>
+              <MagneticButton>
+                <motion.button
+                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => scrollToSection('#portfolio')}
+                  className="btn-hero group inline-flex items-center justify-center"
+                >
+                  View My Work
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </motion.button>
+              </MagneticButton>
+              <MagneticButton>
+                <motion.button
+                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => navigate('/resume')}
+                  className="btn-outline inline-flex items-center justify-center"
+                >
+                  <FileText className="mr-2 h-5 w-5" />
+                  View Resume
+                </motion.button>
+              </MagneticButton>
             </motion.div>
           </div>
           
-          {/* Profile Image */}
+          {/* 3D Perspective Profile Image */}
           <motion.div
             initial={{ opacity: 0, x: 60, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            style={{ perspective: 1000 }}
           >
-            <div className="relative">
+            <motion.div
+              style={{
+                rotateX: profileRotateX,
+                rotateY: profileRotateY,
+                scale: profileScale,
+                transformStyle: 'preserve-3d',
+              }}
+              className="relative"
+            >
               <div className="absolute inset-0 hero-gradient rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
               <div className="relative bg-white rounded-3xl p-8 shadow-xl">
                 <img
@@ -131,11 +165,12 @@ const Hero = () => {
                   className="absolute -top-4 -right-4 w-28 h-28 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm text-center leading-tight shadow-lg shadow-primary/30"
                   animate={{ y: [0, -8, 0], rotate: [0, 3, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                  style={{ transform: 'translateZ(40px)' }}
                 >
                   GoAdsLive<br />Intern
                 </motion.div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
