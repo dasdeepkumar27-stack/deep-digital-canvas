@@ -64,14 +64,15 @@ const Tilt3DCard = ({
         style={{
           rotateX,
           rotateY,
-          transformStyle: 'preserve-3d',
         }}
         className="relative w-full h-full"
       >
-        {children}
+        <div className="relative z-[1]">
+          {children}
+        </div>
         {glareEnabled && (
           <motion.div
-            className="pointer-events-none absolute inset-0 rounded-[inherit] z-10"
+            className="pointer-events-none absolute inset-0 rounded-[inherit]"
             style={{
               background: useTransform(
                 [glareX, glareY],
