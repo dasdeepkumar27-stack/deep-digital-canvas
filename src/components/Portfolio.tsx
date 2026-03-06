@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { FadeUp, StaggerContainer, StaggerItem } from './motion/AnimatedSection';
-import Tilt3DCard from './motion/Tilt3DCard';
+
 
 const Portfolio = () => {
   const [pptModalOpen, setPptModalOpen] = useState(false);
@@ -65,7 +65,7 @@ const Portfolio = () => {
             const IconComponent = project.icon;
             return (
               <StaggerItem key={project.title}>
-                <Tilt3DCard tiltAmount={6} className={`h-full ${project.featured ? 'md:col-span-2 lg:col-span-1' : ''}`}>
+                <div className={`h-full ${project.featured ? 'md:col-span-2 lg:col-span-1' : ''}`}>
                   <div className="portfolio-card h-full">
                     <div className="flex items-start justify-between mb-4">
                       <div className="bg-gradient-to-br from-primary/20 to-primary/10 p-3 rounded-lg">
@@ -104,7 +104,7 @@ const Portfolio = () => {
                       )}
                     </div>
                   </div>
-                </Tilt3DCard>
+                </div>
               </StaggerItem>
             );
           })}

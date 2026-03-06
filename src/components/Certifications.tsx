@@ -2,7 +2,7 @@ import { Award, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { FadeUp, StaggerContainer, StaggerItem } from './motion/AnimatedSection';
-import Tilt3DCard from './motion/Tilt3DCard';
+
 
 const Certifications = () => {
   const certifications = [
@@ -49,7 +49,6 @@ const Certifications = () => {
         >
           {certifications.map((cert) => (
             <motion.div key={cert.name} variants={cardVariants} style={{ perspective: 800 }}>
-              <Tilt3DCard tiltAmount={8}>
                 <div className="glass-card p-6 group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 h-full">
                   <div className="flex flex-col h-full">
                     <div className="flex items-start space-x-4 mb-4">
@@ -72,7 +71,7 @@ const Certifications = () => {
                     </div>
                   </div>
                 </div>
-              </Tilt3DCard>
+              
             </motion.div>
           ))}
         </motion.div>
