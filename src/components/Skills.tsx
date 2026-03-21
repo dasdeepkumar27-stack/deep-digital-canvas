@@ -1,22 +1,21 @@
 import { 
-  Search, Palette, Code, Calendar, FileText, Camera, Figma, Instagram, Smartphone, Layout
+  Search, Target, FileText, BarChart3, TrendingUp, Megaphone, MousePointerClick, Layers, Palette, Smartphone
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { FadeUp, StaggerContainer, StaggerItem } from './motion/AnimatedSection';
 
-
 const Skills = () => {
   const skills = [
-    { icon: Camera, title: 'Short-Form Video Ads', description: 'Creating engaging video ads for paid campaigns', color: 'text-red-600' },
-    { icon: Palette, title: 'Ad Creative Design', description: 'High-converting static and motion graphics for ads', color: 'text-blue-500' },
-    { icon: Figma, title: 'UI/UX for Conversion', description: 'Landing pages and ad designs optimized for action', color: 'text-pink-600' },
-    { icon: Layout, title: 'Landing Page Design', description: 'Conversion-focused page designs in Figma', color: 'text-cyan-600', link: 'https://www.figma.com/design/hVz2J6WNxy2qwlIFEjr7cd/GRAVIX?node-id=5-29&p=f&t=BnvmPuESvi4h1Cf6-0' },
-    { icon: Search, title: 'Google Ads Basics', description: 'Fundamental understanding of paid search campaigns', color: 'text-green-600' },
-    { icon: Instagram, title: 'Social Media Ads', description: 'Creative content for Meta and social ad platforms', color: 'text-primary' },
-    { icon: FileText, title: 'Brand Guidelines', description: 'Consistent visual identity for ad campaigns', color: 'text-orange-600' },
-    { icon: Code, title: 'Basic Web Development', description: 'WordPress and landing page implementation', color: 'text-blue-600' },
-    { icon: Calendar, title: 'Content Planning', description: 'Strategic ad creative scheduling and delivery', color: 'text-purple-600' },
-    { icon: Smartphone, title: 'Mobile-First Design', description: 'Ad creatives optimized for mobile experiences', color: 'text-indigo-600' }
+    { icon: Search, title: 'Google Ads Management', description: 'Search, Display & Video campaign setup, optimization, and management', color: 'text-green-600' },
+    { icon: Megaphone, title: 'Meta Ads Execution', description: 'Facebook & Instagram ad campaigns with audience targeting and A/B testing', color: 'text-blue-500' },
+    { icon: Target, title: 'Keyword Research & Targeting', description: 'In-depth keyword analysis, match types, and negative keyword strategy', color: 'text-red-600' },
+    { icon: MousePointerClick, title: 'Ad Copywriting', description: 'Conversion-focused headlines, descriptions, and CTAs for paid ads', color: 'text-primary' },
+    { icon: TrendingUp, title: 'Campaign Optimization', description: 'Bid adjustments, quality score improvement, and budget allocation', color: 'text-cyan-600' },
+    { icon: BarChart3, title: 'Performance Tracking', description: 'CTR, CPC, conversion rate analysis using Google Analytics & Ads dashboards', color: 'text-purple-600' },
+    { icon: Layers, title: 'Audience Segmentation', description: 'Custom audiences, lookalikes, retargeting, and demographic targeting', color: 'text-orange-600' },
+    { icon: FileText, title: 'Landing Page Strategy', description: 'Conversion-focused landing page recommendations and optimization', color: 'text-indigo-600' },
+    { icon: Palette, title: 'Ad Creative Support', description: 'Understanding of ad creatives that helps improve campaign performance', color: 'text-pink-600' },
+    { icon: Smartphone, title: 'GMB & Local Ads', description: 'Google My Business optimization and local advertising campaigns', color: 'text-blue-600' }
   ];
 
   return (
@@ -26,13 +25,13 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeUp className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary rounded-full text-sm font-medium mb-6">
-            What I Bring to the Table
+            Core Competencies
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
-            My <span className="gradient-text">Skills</span>
+            My <span className="gradient-text">Expertise</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            A focused toolkit for creating high-converting ad creatives and video content
+            Practical skills in paid advertising, campaign management, and performance optimization
           </p>
         </FadeUp>
 
@@ -53,15 +52,9 @@ const Skills = () => {
 
             return (
               <StaggerItem key={skill.title}>
-                {skill.link ? (
-                  <a href={skill.link} target="_blank" rel="noopener noreferrer" className="glass-card p-6 group block hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 cursor-pointer h-full">
-                    {CardContent}
-                  </a>
-                ) : (
-                  <div className="glass-card p-6 group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 h-full">
-                    {CardContent}
-                  </div>
-                )}
+                <div className="glass-card p-6 group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 h-full">
+                  {CardContent}
+                </div>
               </StaggerItem>
             );
           })}
@@ -72,12 +65,11 @@ const Skills = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5"></div>
             <div className="relative z-10">
               <h3 className="text-2xl font-bold mb-4">
-                Specialized in <span className="gradient-text">Performance Creatives</span>
+                Focused on <span className="gradient-text">Measurable Results</span>
               </h3>
               <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                From short-form video ads to static ad creatives, I focus on building visuals that drive clicks and conversions. 
-                My work combines video editing skills with UI/UX principles to create ad content 
-                that captures attention and motivates action.
+                From Google Ads Search campaigns to Meta Ads retargeting, I focus on building and optimizing campaigns 
+                that deliver real business outcomes. Every decision is backed by data — CTR, CPC, conversions, and ROI.
               </p>
             </div>
           </div>

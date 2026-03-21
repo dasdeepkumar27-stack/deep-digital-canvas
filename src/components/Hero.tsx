@@ -37,10 +37,8 @@ const Hero = () => {
 
   return (
     <section ref={sectionRef} id="home" className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Gradient Background */}
       <div className="absolute inset-0 hero-gradient opacity-10"></div>
       
-      {/* Parallax Floating Elements */}
       <motion.div
         className="absolute top-20 right-20 w-32 h-32 bg-primary/20 rounded-full blur-xl"
         style={{ y: floatY1 }}
@@ -62,7 +60,6 @@ const Hero = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
           <div>
             <div className="mb-6">
               <motion.span
@@ -72,7 +69,7 @@ const Hero = () => {
                 variants={textVariants}
                 className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4"
               >
-                Digital Marketing Specialist
+                Performance Marketer
               </motion.span>
               <motion.h1
                 custom={1}
@@ -83,7 +80,7 @@ const Hero = () => {
               >
                 Hello, I'm{' '}
                 <span className="gradient-text">Deep Kumar Das</span>
-                <span className="block text-2xl sm:text-3xl mt-2 text-muted-foreground font-medium">Performance Creative Specialist</span>
+                <span className="block text-2xl sm:text-3xl mt-2 text-muted-foreground font-medium">Google Ads & Meta Ads Specialist</span>
               </motion.h1>
               <motion.h2
                 custom={2}
@@ -103,7 +100,7 @@ const Hero = () => {
               variants={textVariants}
               className="text-lg text-muted-foreground mb-8 leading-relaxed"
             >
-              As a Performance Creative Specialist & Performance Marketing Intern at GOADSLIVE, I manage Meta Ads campaigns, optimize performance creatives, analyze ad metrics, and craft high-converting short-form video ads to improve conversion rates and ROI.
+              I build and optimize Google Ads & Meta Ads campaigns that drive measurable results. From keyword research and audience targeting to ad copywriting and conversion tracking — I focus on improving CTR, reducing CPC, and maximizing ROI.
             </motion.p>
             
             <motion.div
@@ -117,10 +114,10 @@ const Hero = () => {
                 <motion.button
                   whileHover={{ y: -3, scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => scrollToSection('#portfolio')}
+                  onClick={() => scrollToSection('#projects')}
                   className="btn-hero group inline-flex items-center justify-center"
                 >
-                  View My Work
+                  Explore Projects
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </MagneticButton>
@@ -132,13 +129,12 @@ const Hero = () => {
                   className="btn-outline inline-flex items-center justify-center"
                 >
                   <FileText className="mr-2 h-5 w-5" />
-                  View Resume
+                  Download Resume
                 </motion.button>
               </MagneticButton>
             </motion.div>
           </div>
           
-          {/* 3D Perspective Profile Image */}
           <motion.div
             initial={{ opacity: 0, x: 60, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -158,7 +154,7 @@ const Hero = () => {
               <div className="relative bg-white rounded-3xl p-8 shadow-xl">
                 <img
                   src={deepProfile}
-                  alt="Deep Kumar Das - Performance Creative Specialist & Digital Marketing Intern at GOADSLIVE"
+                  alt="Deep Kumar Das - Performance Marketer | Google Ads & Meta Ads Specialist"
                   className="w-full max-w-md mx-auto aspect-square object-cover rounded-2xl shadow-lg"
                 />
                 <motion.div

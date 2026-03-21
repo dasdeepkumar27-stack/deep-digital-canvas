@@ -26,22 +26,22 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeUp className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary rounded-full text-sm font-medium mb-6">
-            Let's Start a Conversation
+            Let's Connect
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
-            Let's <span className="gradient-text">Connect</span>
+            Get in <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Ready to collaborate or have questions? I'd love to hear from you
+            Looking for opportunities in performance marketing — feel free to reach out
           </p>
         </FadeUp>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <SlideInLeft className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-semibold mb-6">Reach Out</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Whether you have a project in mind, need a Performance Creative Specialist, or just want to connect, I'm always open to new opportunities and conversations.
+                Whether you have an opportunity, want to discuss performance marketing, or just want to connect — I'm always open to conversations. Currently seeking full-time roles in performance marketing and paid advertising.
               </p>
             </div>
             <div className="space-y-6">
@@ -112,7 +112,7 @@ const Contact = () => {
                     required
                     rows={6}
                     className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 bg-background resize-none"
-                    placeholder="Tell me about your project or just say hello!"
+                    placeholder="Write your message here..."
                   />
                 </div>
                 <MagneticButton className="w-full">
