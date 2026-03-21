@@ -9,8 +9,8 @@ const Navigation = () => {
   const menuItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Expertise', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -30,7 +30,6 @@ const Navigation = () => {
             <span className="text-xl font-bold gradient-text">Deep Kumar Das</span>
           </div>
           
-          {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {menuItems.map((item) => (
@@ -52,7 +51,6 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -64,7 +62,6 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-background border-b border-border">
           <div className="px-2 pt-2 pb-3 space-y-1">

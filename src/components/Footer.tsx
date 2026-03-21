@@ -12,19 +12,24 @@ const Footer = () => {
             <div className="glass-card p-6">
               <h3 className="text-xl font-bold gradient-text mb-4">Deep Kumar Das</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Performance Creative Specialist focused on creating high-converting ad creatives and video content for paid campaigns.
+                Performance Marketer specializing in Google Ads & Meta Ads campaign management, optimization, and results-driven paid advertising.
               </p>
             </div>
             <div className="glass-card p-6">
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
-                {['about', 'skills', 'portfolio', 'contact'].map((section) => (
-                  <li key={section}>
+                {[
+                  { id: 'about', label: 'About Me' },
+                  { id: 'skills', label: 'Expertise' },
+                  { id: 'projects', label: 'Projects' },
+                  { id: 'contact', label: 'Contact' },
+                ].map((section) => (
+                  <li key={section.id}>
                     <button
-                      onClick={() => document.querySelector(`#${section}`)?.scrollIntoView({ behavior: 'smooth' })}
-                      className="text-muted-foreground hover:text-primary transition-colors capitalize"
+                      onClick={() => document.querySelector(`#${section.id}`)?.scrollIntoView({ behavior: 'smooth' })}
+                      className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      {section === 'about' ? 'About Me' : section}
+                      {section.label}
                     </button>
                   </li>
                 ))}
@@ -36,7 +41,7 @@ const Footer = () => {
                 <p className="text-muted-foreground">Kolkata, West Bengal</p>
                 <p className="text-muted-foreground">dasdeepkumar27@gmail.com</p>
                 <p className="text-muted-foreground">+91 74394 82314</p>
-                <p className="text-muted-foreground">Available for opportunities</p>
+                <p className="text-muted-foreground">Open to performance marketing roles</p>
               </div>
             </div>
           </div>
