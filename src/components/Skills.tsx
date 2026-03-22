@@ -36,32 +36,47 @@ const Skills = () => {
         </FadeUp>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill) => {
+          {skills.map((skill, index) => {
             const IconComponent = skill.icon;
-            const CardContent = (
-              <div className="flex items-start space-x-4">
-                <div className="bg-gradient-to-br from-primary/20 to-primary/10 p-3 rounded-lg group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 group-hover:scale-110">
-                  <IconComponent className={`h-6 w-6 ${skill.color}`} />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{skill.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{skill.description}</p>
-                </div>
-              </div>
-            );
-
             return (
               <StaggerItem key={skill.title}>
-                <div className="glass-card p-6 group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 h-full">
-                  {CardContent}
-                </div>
+                <motion.div
+                  whileHover={{ y: -6, scale: 1.02 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  className="glass-card p-6 group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 h-full relative overflow-hidden"
+                >
+                  {/* Animated gradient border on hover */}
+                  <motion.div
+                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{
+                      background: 'linear-gradient(135deg, hsl(217 91% 60% / 0.15), hsl(252 83% 57% / 0.15))',
+                    }}
+                  />
+                  <div className="relative z-[1] flex items-start space-x-4">
+                    <motion.div
+                      whileHover={{ rotate: [0, -10, 10, 0] }}
+                      transition={{ duration: 0.5 }}
+                      className="bg-gradient-to-br from-primary/20 to-primary/10 p-3 rounded-lg group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 group-hover:scale-110"
+                    >
+                      <IconComponent className={`h-6 w-6 ${skill.color}`} />
+                    </motion.div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{skill.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{skill.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
               </StaggerItem>
             );
           })}
         </StaggerContainer>
 
         <FadeUp className="mt-12" delay={0.3}>
-          <div className="glass-card p-8 text-center relative overflow-hidden">
+          <motion.div
+            whileHover={{ scale: 1.01 }}
+            transition={{ type: 'spring', stiffness: 200 }}
+            className="glass-card p-8 text-center relative overflow-hidden"
+          >
             <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5"></div>
             <div className="relative z-10">
               <h3 className="text-2xl font-bold mb-4">
@@ -72,7 +87,7 @@ const Skills = () => {
                 that deliver real business outcomes. Every decision is backed by data — CTR, CPC, conversions, and ROI.
               </p>
             </div>
-          </div>
+          </motion.div>
         </FadeUp>
       </div>
     </section>

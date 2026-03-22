@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import deepProfile from '@/assets/deep-profile-new.png';
 import MagneticButton from './motion/MagneticButton';
+import TextReveal from './motion/TextReveal';
+import AnimatedCounter from './motion/AnimatedCounter';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -71,17 +73,26 @@ const Hero = () => {
               >
                 Performance Marketer
               </motion.span>
-              <motion.h1
-                custom={1}
-                initial="hidden"
-                animate="visible"
-                variants={textVariants}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
-              >
-                Hello, I'm{' '}
-                <span className="gradient-text">Deep Kumar Das</span>
-                <span className="block text-2xl sm:text-3xl mt-2 text-muted-foreground font-medium">Google Ads & Meta Ads Specialist</span>
-              </motion.h1>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.15 }}
+                >
+                  Hello, I'm{' '}
+                </motion.span>
+                <span className="gradient-text">
+                  <TextReveal text="Deep Kumar Das" delay={0.3} />
+                </span>
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  className="block text-2xl sm:text-3xl mt-2 text-muted-foreground font-medium"
+                >
+                  Google Ads & Meta Ads Specialist
+                </motion.span>
+              </h1>
               <motion.h2
                 custom={2}
                 initial="hidden"
@@ -102,6 +113,27 @@ const Hero = () => {
             >
               I build and optimize Google Ads & Meta Ads campaigns that drive measurable results. From keyword research and audience targeting to ad copywriting and conversion tracking — I focus on improving CTR, reducing CPC, and maximizing ROI.
             </motion.p>
+
+            {/* Stats Counter Row */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+              className="flex gap-8 mb-8"
+            >
+              {[
+                { target: 5, suffix: '+', label: 'Certifications' },
+                { target: 10, suffix: '+', label: 'Projects' },
+                { target: 3, suffix: '+', label: 'Platforms' },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-3xl font-bold gradient-text">
+                    <AnimatedCounter target={stat.target} suffix={stat.suffix} />
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+                </div>
+              ))}
+            </motion.div>
             
             <motion.div
               custom={4}

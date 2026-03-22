@@ -58,27 +58,44 @@ const Portfolio = () => {
             const IconComponent = project.icon;
             return (
               <StaggerItem key={project.title}>
-                <div className={`h-full ${project.featured ? 'md:col-span-2 lg:col-span-1' : ''}`}>
-                  <div className="portfolio-card h-full">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="bg-gradient-to-br from-primary/20 to-primary/10 p-3 rounded-lg">
+                <motion.div
+                  whileHover={{ y: -8 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  className={`h-full ${project.featured ? 'md:col-span-2 lg:col-span-1' : ''}`}
+                >
+                  <div className="portfolio-card h-full group relative overflow-hidden">
+                    {/* Shine effect on hover */}
+                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none" />
+                    
+                    <div className="flex items-start justify-between mb-4 relative z-[1]">
+                      <motion.div
+                        whileHover={{ rotate: [0, -10, 10, 0] }}
+                        transition={{ duration: 0.5 }}
+                        className="bg-gradient-to-br from-primary/20 to-primary/10 p-3 rounded-lg"
+                      >
                         <IconComponent className="h-6 w-6 text-primary" />
-                      </div>
+                      </motion.div>
                       {project.featured && (
-                        <span className="bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 rounded-full text-xs font-medium">Featured</span>
+                        <motion.span
+                          animate={{ scale: [1, 1.05, 1] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                          className="bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 rounded-full text-xs font-medium"
+                        >
+                          Featured
+                        </motion.span>
                       )}
                     </div>
-                    <div className="mb-4">
-                      <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                    <div className="mb-4 relative z-[1]">
+                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
                       <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{project.description}</p>
                       <span className="inline-block px-3 py-1 bg-muted rounded-full text-xs font-medium text-muted-foreground">{project.category}</span>
                     </div>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mb-4 relative z-[1]">
                       {project.tech.map((tech) => (
                         <span key={tech} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-md">{tech}</span>
                       ))}
                     </div>
-                    <div className="flex items-center justify-between pt-4 border-t border-border">
+                    <div className="flex items-center justify-between pt-4 border-t border-border relative z-[1]">
                       <span className="text-sm text-muted-foreground">{project.category}</span>
                       {project.link ? (
                         project.isPpt ? (
@@ -97,7 +114,7 @@ const Portfolio = () => {
                       )}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </StaggerItem>
             );
           })}
