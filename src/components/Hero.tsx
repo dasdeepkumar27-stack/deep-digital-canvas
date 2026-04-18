@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   const ease = [0.22, 1, 0.36, 1] as const;
-  const viewport = { once: false, margin: '-15%' };
+  const viewport = { once: false, amount: 0.2, margin: '-10% 0px -10% 0px' };
 
   return (
     <section id="home" className="min-h-screen relative overflow-hidden flex items-end">
@@ -35,8 +35,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background/90" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/20 to-transparent" />
 
-      {/* Content — pushed to bottom, left aligned */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 lg:pb-24 pt-32">
+      {/* Content — pushed to bottom (lower third safe zone), left aligned, never overlapping face */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 lg:pb-16 pt-[60vh] sm:pt-[62vh] lg:pt-[64vh]">
         <div className="max-w-3xl">
           <motion.span
             initial={{ opacity: 0, x: -40 }}
