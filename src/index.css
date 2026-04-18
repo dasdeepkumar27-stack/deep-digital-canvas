@@ -163,8 +163,8 @@ All colors MUST be HSL.
   }
   
   .skill-card {
-    @apply bg-card border border-border/50 rounded-xl p-6 card-hover;
-    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--muted)));
+    @apply bg-card border border-border/50 rounded-xl p-6 card-hover backdrop-blur-md;
+    background: linear-gradient(135deg, hsl(var(--card) / 0.7), hsl(var(--muted) / 0.5));
   }
   
   .btn-hero {
@@ -200,7 +200,7 @@ All colors MUST be HSL.
   }
 
   .glass-card {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl;
+    @apply bg-card/40 backdrop-blur-xl border border-primary/20 rounded-2xl shadow-xl;
   }
 
   .floating-element {
