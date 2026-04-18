@@ -8,52 +8,53 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Professional Portfolio Color System */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cinematic Teal & Deep Blue Color System */
+    --background: 205 45% 8%;
+    --foreground: 190 40% 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 205 40% 11%;
+    --card-foreground: 190 40% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 205 45% 10%;
+    --popover-foreground: 190 40% 96%;
 
-    /* Primary: Professional Blue */
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 217 91% 75%;
-    --primary-dark: 217 91% 45%;
+    /* Primary: Luminous Teal */
+    --primary: 184 80% 55%;
+    --primary-foreground: 205 50% 8%;
+    --primary-light: 184 80% 70%;
+    --primary-dark: 188 85% 40%;
 
-    /* Secondary: Modern Purple */
-    --secondary: 252 83% 57%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary: Deep Ocean Blue */
+    --secondary: 210 90% 55%;
+    --secondary-foreground: 190 40% 96%;
 
     /* Neutral Palette */
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 205 30% 16%;
+    --muted-foreground: 200 20% 70%;
 
-    --accent: 220 14% 96%;
-    --accent-foreground: 220 9% 15%;
+    --accent: 188 70% 45%;
+    --accent-foreground: 205 50% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 60%;
+    --border: 200 30% 22%;
+    --input: 205 35% 15%;
+    --ring: 184 80% 55%;
 
     /* Design System Tokens */
     --radius: 0.75rem;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%), hsl(252 83% 57%));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(220 14% 98%));
+    --gradient-primary: linear-gradient(135deg, hsl(184 80% 55%), hsl(210 90% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(188 85% 40%), hsl(215 85% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(205 45% 8%), hsl(205 50% 11%));
     
-    /* Shadows */
-    --shadow-soft: 0 2px 8px -2px hsl(var(--primary) / 0.1);
-    --shadow-medium: 0 8px 25px -5px hsl(var(--primary) / 0.15);
-    --shadow-large: 0 20px 40px -12px hsl(var(--primary) / 0.25);
+    /* Shadows — cinematic glow */
+    --shadow-soft: 0 2px 12px -2px hsl(var(--primary) / 0.25);
+    --shadow-medium: 0 8px 30px -5px hsl(var(--primary) / 0.35);
+    --shadow-large: 0 20px 50px -12px hsl(var(--primary) / 0.45);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

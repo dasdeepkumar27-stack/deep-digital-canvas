@@ -1,25 +1,12 @@
 import { ArrowRight, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import deepProfile from '@/assets/deep-profile-new.png';
+import { motion } from 'framer-motion';
+import heroVideo from '@/assets/hero-bg.mp4';
 import MagneticButton from './motion/MagneticButton';
-import TextReveal from './motion/TextReveal';
 import AnimatedCounter from './motion/AnimatedCounter';
 
 const Hero = () => {
   const navigate = useNavigate();
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  });
-
-  const profileRotateX = useTransform(scrollYProgress, [0, 1], [0, 12]);
-  const profileRotateY = useTransform(scrollYProgress, [0, 1], [0, -8]);
-  const profileScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
-  const floatY1 = useTransform(scrollYProgress, [0, 1], [0, -60]);
-  const floatY2 = useTransform(scrollYProgress, [0, 1], [0, -30]);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -28,177 +15,128 @@ const Hero = () => {
     }
   };
 
-  const textVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] as const },
-    }),
-  };
+  const ease = [0.22, 1, 0.36, 1] as const;
+  const viewport = { once: false, margin: '-15%' };
 
   return (
-    <section ref={sectionRef} id="home" className="min-h-screen flex items-center relative overflow-hidden">
-      <div className="absolute inset-0 hero-gradient opacity-10"></div>
-      
-      <motion.div
-        className="absolute top-20 right-20 w-32 h-32 bg-primary/20 rounded-full blur-xl"
-        style={{ y: floatY1 }}
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+    <section id="home" className="min-h-screen relative overflow-hidden flex items-end">
+      {/* Cinematic video background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={heroVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
       />
-      <motion.div
-        className="absolute bottom-20 left-10 w-24 h-24 bg-secondary/20 rounded-full blur-xl"
-        style={{ y: floatY2 }}
-        animate={{ scale: [1, 1.08, 1] }}
-        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-      />
-      <motion.div
-        className="absolute top-1/3 left-1/4 w-16 h-16 bg-accent/15 rounded-full blur-lg"
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -90]) }}
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-      />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="mb-6">
-              <motion.span
-                custom={0}
-                initial="hidden"
-                animate="visible"
-                variants={textVariants}
-                className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4"
-              >
-                Performance Marketer
-              </motion.span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.4, delay: 0.15 }}
-                >
-                  Hello, I'm{' '}
-                </motion.span>
-                <span className="gradient-text">
-                  <TextReveal text="Deep Kumar Das" delay={0.3} />
-                </span>
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  className="block text-2xl sm:text-3xl mt-2 text-muted-foreground font-medium"
-                >
-                  Google Ads & Meta Ads Specialist
-                </motion.span>
-              </h1>
-              <motion.h2
-                custom={2}
-                initial="hidden"
-                animate="visible"
-                variants={textVariants}
-                className="text-xl sm:text-2xl text-muted-foreground mt-4 font-medium"
-              >
-                Performance Marketing Intern at <span className="text-primary font-semibold">GOADSLIVE</span>
-              </motion.h2>
-            </div>
-            
-            <motion.p
-              custom={3}
-              initial="hidden"
-              animate="visible"
-              variants={textVariants}
-              className="text-lg text-muted-foreground mb-8 leading-relaxed"
-            >
-              I build and optimize Google Ads & Meta Ads campaigns that drive measurable results. From keyword research and audience targeting to ad copywriting and conversion tracking — I focus on improving CTR, reducing CPC, and maximizing ROI.
-            </motion.p>
 
-            {/* Stats Counter Row */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.5 }}
-              className="flex gap-8 mb-8"
-            >
-              {[
-                { target: 5, suffix: '+', label: 'Certifications' },
-                { target: 10, suffix: '+', label: 'Projects' },
-                { target: 3, suffix: '+', label: 'Platforms' },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-3xl font-bold gradient-text">
-                    <AnimatedCounter target={stat.target} suffix={stat.suffix} />
-                  </div>
-                  <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
-                </div>
-              ))}
-            </motion.div>
-            
-            <motion.div
-              custom={4}
-              initial="hidden"
-              animate="visible"
-              variants={textVariants}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <MagneticButton>
-                <motion.button
-                  whileHover={{ y: -3, scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => scrollToSection('#projects')}
-                  className="btn-hero group inline-flex items-center justify-center"
-                >
-                  Explore Projects
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
-              </MagneticButton>
-              <MagneticButton>
-                <motion.button
-                  whileHover={{ y: -3, scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => navigate('/resume')}
-                  className="btn-outline inline-flex items-center justify-center"
-                >
-                  <FileText className="mr-2 h-5 w-5" />
-                  Download Resume
-                </motion.button>
-              </MagneticButton>
-            </motion.div>
-          </div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 60, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            style={{ perspective: 1000 }}
+      {/* Gradient overlays for readability — keeps face area clean, darkens bottom for text */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background/90" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/20 to-transparent" />
+
+      {/* Content — pushed to bottom, left aligned */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 lg:pb-24 pt-32">
+        <div className="max-w-3xl">
+          <motion.span
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={viewport}
+            transition={{ duration: 0.7, delay: 0.1, ease }}
+            className="inline-block px-4 py-2 bg-primary/15 backdrop-blur-md border border-primary/30 text-primary-foreground rounded-full text-sm font-medium mb-5"
           >
-            <motion.div
-              style={{
-                rotateX: profileRotateX,
-                rotateY: profileRotateY,
-                scale: profileScale,
-                transformStyle: 'preserve-3d',
-              }}
-              className="relative"
+            Performance Marketer
+          </motion.span>
+
+          <motion.h1
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={viewport}
+            transition={{ duration: 0.9, delay: 0.2, ease }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground"
+          >
+            Hello, I'm <span className="gradient-text">Deep Kumar Das</span>
+            <motion.span
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={viewport}
+              transition={{ duration: 0.9, delay: 0.45, ease }}
+              className="block text-2xl sm:text-3xl mt-3 text-foreground/80 font-medium"
             >
-              <div className="absolute inset-0 hero-gradient rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
-              <div className="relative bg-white rounded-3xl p-8 shadow-xl">
-                <img
-                  src={deepProfile}
-                  alt="Deep Kumar Das - Performance Marketer | Google Ads & Meta Ads Specialist"
-                  className="w-full max-w-md mx-auto aspect-square object-cover rounded-2xl shadow-lg"
-                />
-                <motion.div
-                  className="absolute -top-4 -right-4 w-28 h-28 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-sm text-center leading-tight shadow-lg shadow-primary/30"
-                  animate={{ y: [0, -8, 0], rotate: [0, 3, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  style={{ transform: 'translateZ(40px)' }}
-                >
-                  GoAdsLive<br />Intern
-                </motion.div>
+              Google Ads & Meta Ads Specialist
+            </motion.span>
+          </motion.h1>
+
+          <motion.h2
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={viewport}
+            transition={{ duration: 0.9, delay: 0.55, ease }}
+            className="text-xl sm:text-2xl text-foreground/75 mt-4 font-medium"
+          >
+            Performance Marketing Intern at <span className="text-primary font-semibold">GOADSLIVE</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={viewport}
+            transition={{ duration: 0.9, delay: 0.7, ease }}
+            className="text-lg text-foreground/70 mt-6 mb-8 leading-relaxed max-w-2xl"
+          >
+            I build and optimize Google Ads & Meta Ads campaigns that drive measurable results. From keyword research and audience targeting to ad copywriting and conversion tracking — I focus on improving CTR, reducing CPC, and maximizing ROI.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={viewport}
+            transition={{ duration: 0.8, delay: 0.85, ease }}
+            className="flex gap-8 mb-8"
+          >
+            {[
+              { target: 5, suffix: '+', label: 'Certifications' },
+              { target: 10, suffix: '+', label: 'Projects' },
+              { target: 3, suffix: '+', label: 'Platforms' },
+            ].map((stat) => (
+              <div key={stat.label} className="text-left">
+                <div className="text-3xl font-bold gradient-text">
+                  <AnimatedCounter target={stat.target} suffix={stat.suffix} />
+                </div>
+                <p className="text-xs text-foreground/60 mt-1">{stat.label}</p>
               </div>
-            </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={viewport}
+            transition={{ duration: 0.8, delay: 1.0, ease }}
+            className="flex flex-col sm:flex-row gap-4"
+          >
+            <MagneticButton>
+              <motion.button
+                whileHover={{ y: -3, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => scrollToSection('#projects')}
+                className="btn-hero group inline-flex items-center justify-center"
+              >
+                Explore Projects
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </MagneticButton>
+            <MagneticButton>
+              <motion.button
+                whileHover={{ y: -3, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => navigate('/resume')}
+                className="btn-outline inline-flex items-center justify-center backdrop-blur-md"
+              >
+                <FileText className="mr-2 h-5 w-5" />
+                Download Resume
+              </motion.button>
+            </MagneticButton>
           </motion.div>
         </div>
       </div>
