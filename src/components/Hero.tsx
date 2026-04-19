@@ -40,7 +40,7 @@ const Hero = () => {
         {/* Top row: Left intro + Right description (mid-height on desktop) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-start">
           {/* LEFT: Intro */}
-          <div className="lg:col-span-5 lg:pl-4 text-left">
+          <div className="lg:col-span-5 text-left">
             <motion.span
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -82,7 +82,7 @@ const Hero = () => {
           </div>
 
           {/* RIGHT: Description */}
-          <div className="lg:col-span-5 lg:col-start-8 lg:pr-4 flex lg:justify-end">
+          <div className="lg:col-span-5 lg:col-start-8 flex lg:justify-end">
             <motion.p
               initial={{ opacity: 0, x: 80, y: 20 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
