@@ -36,11 +36,11 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/20 to-transparent" />
 
       {/* Content layout: Left intro, Right description, Center-bottom stats + CTAs */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 xl:px-20 pb-10 sm:pb-14 lg:pb-16 pt-[55vh] sm:pt-[58vh] lg:pt-[42vh]">
+      <div className="relative z-10 w-full pb-10 sm:pb-14 lg:pb-16 pt-[55vh] sm:pt-[58vh] lg:pt-[42vh]">
         {/* Top row: Left intro + Right description (mid-height on desktop) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-start">
-          {/* LEFT: Intro */}
-          <div className="lg:col-span-5 text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0 items-start">
+          {/* LEFT: Intro - fixed 80px padding */}
+          <div className="lg:col-span-5 text-left pl-[80px]">
             <motion.span
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -81,8 +81,11 @@ const Hero = () => {
             </motion.h2>
           </div>
 
-          {/* RIGHT: Description */}
-          <div className="lg:col-span-5 lg:col-start-8 flex lg:justify-end">
+          {/* Spacer for center face area */}
+          <div className="hidden lg:block lg:col-span-2" />
+
+          {/* RIGHT: Description - fixed 80px padding */}
+          <div className="lg:col-span-5 flex lg:justify-end pr-[80px]">
             <motion.p
               initial={{ opacity: 0, x: 80, y: 20 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
