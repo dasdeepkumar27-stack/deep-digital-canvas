@@ -18,6 +18,11 @@ const Hero = () => {
   const ease = [0.22, 1, 0.36, 1] as const;
   const viewport = { once: false, amount: 0.2, margin: '-10% 0px -10% 0px' };
 
+  // Sequential timing: LEFT (0.2-1.0s) → RIGHT (1.4-2.2s) → BOTTOM (2.6-2.8s)
+  const leftBase = 0.2;
+  const rightBase = 1.4;
+  const bottomBase = 2.6;
+
   return (
     <section id="home" className="min-h-screen relative overflow-hidden flex items-end">
       {/* Cinematic video background */}
