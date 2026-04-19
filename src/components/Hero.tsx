@@ -127,10 +127,10 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.85, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={viewport}
-            transition={{ duration: 0.9, delay: 1.2, ease }}
+            transition={{ duration: 0.9, delay: bottomBase + 0.2, ease }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <MagneticButton>
