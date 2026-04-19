@@ -50,25 +50,25 @@ const Hero = () => {
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
-              transition={{ duration: 0.9, delay: 0.1, ease }}
+              transition={{ duration: 0.8, delay: leftBase, ease }}
               className="inline-block px-4 py-2 bg-primary/15 backdrop-blur-md border border-primary/30 text-primary-foreground rounded-full text-sm font-medium mb-5"
             >
               Performance Marketer
             </motion.span>
 
             <motion.h1
-              initial={{ opacity: 0, x: -100 }}
+              initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
-              transition={{ duration: 1.1, delay: 0.25, ease }}
+              transition={{ duration: 0.9, delay: leftBase + 0.25, ease }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground"
             >
               Hello, I'm <span className="gradient-text">Deep Kumar Das</span>
               <motion.span
-                initial={{ opacity: 0, x: -80 }}
+                initial={{ opacity: 0, x: -60 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={viewport}
-                transition={{ duration: 1.1, delay: 0.5, ease }}
+                transition={{ duration: 0.9, delay: leftBase + 0.5, ease }}
                 className="block text-2xl sm:text-3xl mt-3 text-foreground/80 font-medium"
               >
                 Google Ads & Meta Ads Specialist
@@ -76,10 +76,10 @@ const Hero = () => {
             </motion.h1>
 
             <motion.h2
-              initial={{ opacity: 0, x: -80 }}
+              initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
-              transition={{ duration: 1.1, delay: 0.7, ease }}
+              transition={{ duration: 0.9, delay: leftBase + 0.75, ease }}
               className="text-xl sm:text-2xl text-foreground/75 mt-4 font-medium"
             >
               Performance Marketing Intern at <span className="text-primary font-semibold">GOADSLIVE</span>
@@ -92,10 +92,10 @@ const Hero = () => {
           {/* RIGHT: Description - fixed 80px padding */}
           <div className="lg:col-span-5 flex lg:justify-end pr-[80px]">
             <motion.p
-              initial={{ opacity: 0, x: 80, y: 20 }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
-              transition={{ duration: 1.0, delay: 0.9, ease }}
+              transition={{ duration: 1.0, delay: rightBase, ease }}
               className="text-lg text-foreground/70 leading-relaxed max-w-md text-left lg:text-right"
             >
               I build and optimize Google Ads & Meta Ads campaigns that drive measurable results. From keyword research and audience targeting to ad copywriting and conversion tracking — I focus on improving CTR, reducing CPC, and maximizing ROI.
