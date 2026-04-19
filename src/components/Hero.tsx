@@ -51,7 +51,7 @@ const Hero = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
               transition={{ duration: 0.8, delay: leftBase, ease }}
-              className="inline-block px-4 py-2 bg-primary/15 backdrop-blur-md border border-primary/30 text-primary-foreground rounded-full text-sm font-medium mb-5"
+              className="inline-block px-4 py-2 bg-primary/30 backdrop-blur-md border border-primary/50 text-primary-foreground rounded-full text-sm font-medium mb-5 shadow-[0_0_15px_rgba(var(--primary),0.3)]"
             >
               Performance Marketer
             </motion.span>
@@ -119,7 +119,7 @@ const Hero = () => {
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-3xl font-bold gradient-text">
-                  <AnimatedCounter target={stat.target} suffix={stat.suffix} />
+                  <AnimatedCounter target={stat.target} suffix={stat.suffix} delay={0.3} duration={1.2} />
                 </div>
                 <p className="text-xs text-foreground/60 mt-1">{stat.label}</p>
               </div>

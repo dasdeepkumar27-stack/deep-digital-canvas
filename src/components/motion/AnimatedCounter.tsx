@@ -6,30 +6,37 @@ interface AnimatedCounterProps {
   suffix?: string;
   prefix?: string;
   duration?: number;
+  delay?: number;
 }
 
-const AnimatedCounter = ({ target, suffix = '', prefix = '', duration = 2 }: AnimatedCounterProps) => {
+const AnimatedCounter = ({ target, suffix = '', prefix = '', duration = 1.5, delay = 0 }: AnimatedCounterProps) => {
   const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || hasStarted) return;
 
-    let start = 0;
-    const increment = target / (duration * 60);
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 1000 / 60);
+    const startTimeout = setTimeout(() => {
+      setHasStarted(true);
+      let start = 0;
+      const increment = target / (duration * 60);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          setCount(target);
+          clearInterval(timer);
+        } else {
+          setCount(Math.floor(start));
+        }
+      }, 1000 / 60);
 
-    return () => clearInterval(timer);
-  }, [isInView, target, duration]);
+      return () => clearInterval(timer);
+    }, delay * 1000);
+
+    return () => clearTimeout(startTimeout);
+  }, [isInView, target, duration, delay, hasStarted]);
 
   return (
     <motion.span
