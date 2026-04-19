@@ -106,10 +106,10 @@ const Hero = () => {
         {/* CENTER BOTTOM: Stats + CTAs */}
         <div className="mt-12 lg:mt-16 flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewport}
-            transition={{ duration: 0.9, delay: 1.05, ease }}
+            transition={{ duration: 0.9, delay: bottomBase, ease }}
             className="flex gap-10 sm:gap-14 mb-8 justify-center"
           >
             {[
