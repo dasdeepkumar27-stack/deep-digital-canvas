@@ -97,7 +97,7 @@ const Hero = () => {
       </section>
 
       {/* ===================== DESKTOP LAYOUT (unchanged) ===================== */}
-      <section className="hidden lg:flex min-h-screen relative overflow-hidden items-end">
+      <section className="hidden lg:flex h-screen relative overflow-hidden items-end">
         {/* Cinematic video background */}
         <video
           className="absolute inset-0 w-full h-full object-cover [object-position:center_30%]"
@@ -113,7 +113,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background/90" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/20 to-transparent" />
 
-        <div className="relative z-10 w-full pb-16 pt-[42vh]">
+        <div className="relative z-10 w-full pb-8 pt-[36vh]">
           <div className="grid grid-cols-12 gap-0 items-start">
             {/* LEFT */}
             <div className="col-span-5 text-left pl-[80px]">
@@ -175,13 +175,13 @@ const Hero = () => {
           </div>
 
           {/* CENTER BOTTOM */}
-          <div className="mt-16 flex flex-col items-center">
+          <div className="mt-8 flex flex-col items-center">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewport}
               transition={{ duration: 0.5, delay: bottomBase, ease }}
-              className="flex gap-14 mb-8 justify-center"
+              className="flex gap-14 mb-5 justify-center"
             >
               {[
                 { target: 5, suffix: '+', label: 'Certifications' },
