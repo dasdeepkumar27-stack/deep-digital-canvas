@@ -50,7 +50,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
-              transition={{ duration: 0.8, delay: leftBase, ease }}
+              transition={{ duration: 0.5, delay: leftBase, ease }}
               className="inline-block px-4 py-2 bg-primary/30 backdrop-blur-md border border-primary/50 text-primary-foreground rounded-full text-sm font-medium mb-5 shadow-[0_0_15px_rgba(var(--primary),0.3)]"
             >
               Performance Marketer
@@ -60,7 +60,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
-              transition={{ duration: 0.9, delay: leftBase + 0.25, ease }}
+              transition={{ duration: 0.55, delay: leftBase + 0.12, ease }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground"
             >
               Hello, I'm <span className="gradient-text">Deep Kumar Das</span>
@@ -68,7 +68,7 @@ const Hero = () => {
                 initial={{ opacity: 0, x: -60 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={viewport}
-                transition={{ duration: 0.9, delay: leftBase + 0.5, ease }}
+                transition={{ duration: 0.55, delay: leftBase + 0.22, ease }}
                 className="block text-2xl sm:text-3xl mt-3 text-foreground/80 font-medium"
               >
                 Google Ads & Meta Ads Specialist
@@ -79,7 +79,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
-              transition={{ duration: 0.9, delay: leftBase + 0.75, ease }}
+              transition={{ duration: 0.55, delay: leftBase + 0.32, ease }}
               className="text-xl sm:text-2xl text-foreground/75 mt-4 font-medium"
             >
               Performance Marketing Intern at <span className="text-primary font-semibold">GOADSLIVE</span>
@@ -95,7 +95,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
-              transition={{ duration: 1.0, delay: rightBase, ease }}
+              transition={{ duration: 0.6, delay: rightBase, ease }}
               className="text-lg text-foreground/70 leading-relaxed max-w-md text-left lg:text-right"
             >
               I build and optimize Google Ads & Meta Ads campaigns that drive measurable results. From keyword research and audience targeting to ad copywriting and conversion tracking — I focus on improving CTR, reducing CPC, and maximizing ROI.
@@ -109,7 +109,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewport}
-            transition={{ duration: 0.9, delay: bottomBase, ease }}
+            transition={{ duration: 0.5, delay: bottomBase, ease }}
             className="flex gap-10 sm:gap-14 mb-8 justify-center"
           >
             {[
@@ -119,7 +119,7 @@ const Hero = () => {
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-3xl font-bold gradient-text">
-                  <AnimatedCounter target={stat.target} suffix={stat.suffix} delay={0.3} duration={1.2} />
+                  <AnimatedCounter target={stat.target} suffix={stat.suffix} delay={0.1} duration={0.9} />
                 </div>
                 <p className="text-xs text-foreground/60 mt-1">{stat.label}</p>
               </div>
@@ -130,7 +130,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewport}
-            transition={{ duration: 0.9, delay: bottomBase + 0.2, ease }}
+            transition={{ duration: 0.5, delay: bottomBase + 0.1, ease }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <MagneticButton>
