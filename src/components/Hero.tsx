@@ -97,7 +97,7 @@ const Hero = () => {
       </section>
 
       {/* ===================== DESKTOP LAYOUT (unchanged) ===================== */}
-      <section className="hidden lg:flex h-screen relative overflow-hidden items-end">
+      <section className="hidden lg:flex h-[calc(100vh-4rem)] mt-16 relative overflow-hidden items-end">
         {/* Cinematic video background */}
         <video
           className="absolute inset-0 w-full h-full object-cover [object-position:center_30%]"
@@ -175,13 +175,13 @@ const Hero = () => {
           </div>
 
           {/* CENTER BOTTOM */}
-          <div className="mt-8 flex flex-col items-center">
+          <div className="mt-5 flex flex-col items-center">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewport}
               transition={{ duration: 0.5, delay: bottomBase, ease }}
-              className="flex gap-14 mb-5 justify-center"
+              className="flex gap-14 mb-4 justify-center"
             >
               {[
                 { target: 5, suffix: '+', label: 'Certifications' },
@@ -199,9 +199,8 @@ const Hero = () => {
 
             <motion.div
               initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={viewport}
-              transition={{ duration: 0.5, delay: bottomBase + 0.1, ease }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.42, delay: 0.78, ease }}
               className="flex flex-row gap-4 justify-center"
             >
               <MagneticButton>
