@@ -18,16 +18,16 @@ const Hero = () => {
   const ease = [0.22, 1, 0.36, 1] as const;
   const viewport = { once: false, amount: 0.2, margin: '-10% 0px -10% 0px' };
 
-  // Sequential timing: LEFT (0.2-1.0s) → RIGHT (1.4-2.2s) → BOTTOM (2.6-2.8s)
-  const leftBase = 0.2;
-  const rightBase = 1.4;
-  const bottomBase = 2.6;
+  // Faster sequential timing: LEFT → RIGHT → BOTTOM, total ~1.2s
+  const leftBase = 0.05;
+  const rightBase = 0.45;
+  const bottomBase = 0.8;
 
   return (
     <section id="home" className="min-h-screen relative overflow-hidden flex items-end">
       {/* Cinematic video background */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover [object-position:center_30%]"
         src={heroVideo}
         autoPlay
         loop
