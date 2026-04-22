@@ -7,7 +7,7 @@ interface AnimatedSectionProps {
   delay?: number;
 }
 
-const easeInOut = [0.4, 0, 0.2, 1];
+const easeInOut: [number, number, number, number] = [0.4, 0, 0.2, 1];
 
 export const FadeUp = ({ children, className, delay = 0 }: AnimatedSectionProps) => (
   <motion.div
