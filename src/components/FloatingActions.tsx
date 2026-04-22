@@ -9,7 +9,7 @@ const WhatsAppIcon = () => (
 
 const FloatingActions = () => {
   return (
-    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3 lg:right-6">
+    <div className="fixed right-4 bottom-6 z-50 flex flex-col gap-3 lg:right-6 lg:bottom-8">
       <motion.a
         href="https://wa.me/917439482314"
         target="_blank"
@@ -28,7 +28,8 @@ const FloatingActions = () => {
         aria-label="Send Email"
         whileHover={{ scale: 1.12 }}
         whileTap={{ scale: 0.92 }}
-        className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-card border border-border flex items-center justify-center text-foreground shadow-lg hover:shadow-xl transition-shadow"
+        className="w-12 h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow"
+        style={{ backgroundColor: '#EA4335' }}
       >
         <Mail className="w-5 h-5 lg:w-6 lg:h-6" />
       </motion.a>
