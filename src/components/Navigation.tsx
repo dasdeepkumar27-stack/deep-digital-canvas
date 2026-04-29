@@ -39,8 +39,12 @@ const Navigation = () => {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50"
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          scrolled
+            ? 'bg-background/70 backdrop-blur-2xl border-b border-primary/15 shadow-[0_8px_30px_-12px_hsl(var(--primary)/0.25)]'
+            : 'bg-background/40 backdrop-blur-md border-b border-transparent'
+        }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
