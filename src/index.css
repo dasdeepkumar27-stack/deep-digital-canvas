@@ -154,13 +154,14 @@ All colors MUST be HSL.
   }
   
   .card-hover {
-    transition: var(--transition-smooth);
+    transition: var(--transition-luxury);
     box-shadow: var(--shadow-soft);
+    will-change: transform, box-shadow;
   }
   
   .card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-medium);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-medium), 0 0 24px hsl(var(--primary) / 0.15);
   }
   
   .skill-card {
@@ -169,25 +170,38 @@ All colors MUST be HSL.
   }
   
   .btn-hero {
-    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold;
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold relative overflow-hidden;
     background: var(--gradient-primary);
-    transition: var(--transition-bounce);
+    transition: var(--transition-luxury);
     box-shadow: var(--shadow-medium);
+    will-change: transform, box-shadow;
   }
   
   .btn-hero:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-large);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-large), 0 0 32px hsl(var(--primary) / 0.45);
+  }
+
+  .btn-hero:active {
+    transform: translateY(-1px) scale(0.99);
+    transition: all 0.15s cubic-bezier(0.22, 1, 0.36, 1);
   }
   
   .btn-outline {
     @apply border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold;
-    transition: var(--transition-smooth);
+    transition: var(--transition-luxury);
+    will-change: transform, box-shadow, background-color;
   }
   
   .btn-outline:hover {
     @apply bg-primary text-primary-foreground;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px -8px hsl(var(--primary) / 0.4), 0 0 24px hsl(var(--primary) / 0.25);
+  }
+
+  .btn-outline:active {
+    transform: translateY(-1px) scale(0.99);
+    transition: all 0.15s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   /* Modern UI Component Styles */
@@ -202,16 +216,20 @@ All colors MUST be HSL.
 
   .glass-card {
     @apply bg-card/40 backdrop-blur-xl border border-primary/20 rounded-2xl shadow-xl;
+    transition: var(--transition-luxury);
+    will-change: transform, box-shadow, border-color;
   }
 
   .floating-element {
-    @apply absolute opacity-20 animate-float;
+    @apply absolute opacity-20 animate-float pointer-events-none;
   }
 
   .portfolio-card {
     @apply bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border/50 
-           rounded-2xl p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 
-           hover:border-primary/30 hover:scale-[1.02];
+           rounded-2xl p-6 hover:shadow-2xl hover:shadow-primary/20 
+           hover:border-primary/40;
+    transition: var(--transition-luxury);
+    will-change: transform, box-shadow, border-color;
   }
 
   .contact-form {
@@ -221,5 +239,27 @@ All colors MUST be HSL.
   .footer-modern {
     @apply relative bg-gradient-to-br from-muted/80 to-muted/40 backdrop-blur-sm 
            border-t border-border/50;
+  }
+
+  /* Premium ambient glow used behind hero */
+  .ambient-glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    pointer-events: none;
+    opacity: 0.45;
+    will-change: transform, opacity;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
