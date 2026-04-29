@@ -113,6 +113,25 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background/90" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/20 to-transparent" />
 
+        {/* Ambient cinematic glows */}
+        <motion.div
+          aria-hidden
+          className="ambient-glow w-[520px] h-[520px] -left-32 top-1/4"
+          style={{ background: 'hsl(var(--primary) / 0.35)' }}
+          animate={{ x: [0, 30, 0], y: [0, -20, 0], opacity: [0.35, 0.5, 0.35] }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          aria-hidden
+          className="ambient-glow w-[460px] h-[460px] -right-24 top-10"
+          style={{ background: 'hsl(var(--secondary) / 0.30)' }}
+          animate={{ x: [0, -25, 0], y: [0, 20, 0], opacity: [0.3, 0.45, 0.3] }}
+          transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+        />
+
+        {/* Bottom fade for seamless section continuity */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-background pointer-events-none z-[5]" />
+
         <div className="relative z-10 w-full pb-8 pt-[36vh]">
           <div className="grid grid-cols-12 gap-0 items-start">
             {/* LEFT */}
