@@ -68,9 +68,17 @@ const Contact = () => {
               <h4 className="font-semibold mb-4">Connect on Social Media</h4>
               <div className="flex space-x-4">
                 <MagneticButton strength={0.4}>
-                  <motion.button whileHover={{ scale: 1.15, rotate: 5 }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-br from-primary/20 to-primary/10 hover:from-primary/30 hover:to-primary/20 p-3 rounded-lg transition-all duration-300">
+                  <motion.a
+                    href="https://www.linkedin.com/in/deep-kumar-das-8b334b384"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn profile"
+                    whileHover={{ scale: 1.15, rotate: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-flex bg-gradient-to-br from-primary/20 to-primary/10 hover:from-primary/30 hover:to-primary/20 p-3 rounded-lg transition-all duration-300"
+                  >
                     <Linkedin className="h-5 w-5 text-primary" />
-                  </motion.button>
+                  </motion.a>
                 </MagneticButton>
                 <MagneticButton strength={0.4}>
                   <motion.button whileHover={{ scale: 1.15, rotate: -5 }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-br from-secondary/20 to-secondary/10 hover:from-secondary/30 hover:to-secondary/20 p-3 rounded-lg transition-all duration-300">
